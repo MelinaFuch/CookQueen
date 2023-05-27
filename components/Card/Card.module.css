@@ -1,0 +1,45 @@
+.mySlider {
+    display: flex !important;
+    margin: 0px 35px !important;
+    justify-content: end;
+    height: 200px;
+}
+.card {
+    justify-content: end;
+    padding-left: 10px;
+    position: relative;
+    top: 50px;
+}
+
+.name {
+    display: flex;
+    z-index: 1000;
+    font-size: 16px;
+    position: absolute;
+    top: 15px;
+    background-color: #e28668d8;
+    justify-content: center;
+}
+
+.image {
+    width: 100%;
+}
+
+.container_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0px;
+    position: absolute;
+}
+
+
+.mySlider button{
+    position: relative !important;
+    background-color: #f8d8a1 !important;
+    border-radius: 500px;
+}
+  
+  .mi-slider .slick-next {
+    /* Estilos para el botón siguiente */
+  }
