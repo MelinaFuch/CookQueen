@@ -16,11 +16,7 @@ export default function card () {
     };
 
     return (
-        <Slider 
-        {...settings} 
-        className={styles.mySlider} 
-        prevArrow={<button style={{ color: 'red' }}>Anterior</button>}
-        nextArrow={<button style={{ color: 'blue' }}>Siguiente</button>}
+        <Slider {...settings} className={styles.mySlider} 
         >
             {
                 recipes.map(recipe => (

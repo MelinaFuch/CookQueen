@@ -26,6 +26,7 @@ export default function inicio () {
         infinite: true,
         autoPlaySpeed: 500,
         slidesToShow: 1,
+        arrows: false,
         slidesToScroll: 1
     };
     const recipes = data.results;
@@ -41,15 +42,24 @@ export default function inicio () {
                     alt="logo"
                     />
             </div>
-            <Slider className={styles.slider} {...settings}>
-                {renderRecipes(recipes, 5)}
-            </Slider>
-            <h1>Novedades</h1>
+            <div>
+                <Slider className={styles.slider} {...settings}>
+                    {renderRecipes(recipes, 5)}
+                </Slider>
+            </div>
             <Card/>
-            <h1>¡Para desayunar/merendar rico!</h1>
-            <Card/>
-            <h1>¡A almorzar!</h1>
-            <Card/>
+            <div>
+                <h1 className={styles.title}>¡Novedades!</h1>
+                <Card/>
+            </div>
+            <div>
+                <h1 className={styles.title}>¡Para desayunar/merendar rico!</h1>
+                <Card/>
+            </div>
+            <div>
+                <h1 className={styles.title}>¡A almorzar!</h1>
+                <Card/>
+            </div>
         </div>
     )
 }
