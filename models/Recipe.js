@@ -26,6 +26,10 @@ const RecipeSchema = new mongoose.Schema({
     video: {
         type: String
     },
+    deleted: {
+        type: String,
+        enum: ['si', 'no']
+    },
     date: {
         type: Date,
         default: Date.now
