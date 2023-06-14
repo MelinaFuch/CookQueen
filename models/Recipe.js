@@ -14,7 +14,7 @@ const RecipeSchema = new mongoose.Schema({
       "Pasta",
       "Desayuno/Merienda",
       "Almuerzo",
-      "Mascotas",
+      "Para mascotas",
     ],
     required: [true, "Por favor, seleccione al menos una categoría"],
   },
