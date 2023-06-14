@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap");
 
 .container {
   display: flex;
   min-height: 94vh;
-  font-family: 'Just Another Hand', cursive;
-  color: #462C1D;
+  font-family: "Just Another Hand", cursive;
+  color: #462c1d;
 }
 
 .container__div {
@@ -18,7 +18,6 @@
   display: flex;
   justify-content: center;
   margin-top: 5px;
-
 }
 
 .h1_container {
@@ -52,7 +51,7 @@
 
 .button_container {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   margin-bottom: 5px;
   position: relative;
   margin-top: 19px;
@@ -60,9 +59,9 @@
 }
 
 .button_container__button {
-  background-color: #462C1D;
+  background-color: #462c1d;
   color: #e28668;
-  font-family: 'Just Another Hand', cursive;
+  font-family: "Just Another Hand", cursive;
   font-size: 17px;
   border-radius: 250px;
   padding: 7px;
@@ -77,9 +76,9 @@
 }
 
 .button_snd {
-  background-color: #462C1D;
+  background-color: #462c1d;
   color: #e28668;
-  font-family: 'Just Another Hand', cursive;
+  font-family: "Just Another Hand", cursive;
   font-size: 25px;
   border-radius: 250px;
   padding: 7px;

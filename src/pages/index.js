@@ -7,7 +7,9 @@ export default function LandingPage() {
     <div className={styles.container}>
       <div className={styles.container__div}>
         <div className={styles.button_container}>
-        <button className={styles.button_container__button}><Link href="/login">INICIAR SESIÓN</Link></button>
+          <button className={styles.button_container__button}>
+            <Link href="/login">INICIAR SESIÓN</Link>
+          </button>
         </div>
         <div className={styles.logo_container}>
           <Image
@@ -15,16 +17,22 @@ export default function LandingPage() {
             src="/img/logo.png"
             width={24}
             height={37}
-            />
+            alt="Logo"
+          />
         </div>
         <div className={styles.h1_container}>
           <h1 className={styles.h1}>COOKQUEEN</h1>
         </div>
         <div className={styles.h3_container}>
           <h3 className={styles.h3}>
-          ¡Hola! En este sitio encontrarás deliciosas recetas de todo tipo creadas por una madre imaginativa y creativa. Además, puedes contactar a esta talentosa persona para pedirle consejos o encargar alguna comida o receta en particular. 
+            ¡Hola! En este sitio encontrarás deliciosas recetas de todo tipo
+            creadas por una madre imaginativa y creativa. Además, puedes
+            contactar a esta talentosa persona para pedirle consejos o encargar
+            alguna comida o receta en particular.
           </h3>
-          <h3 className={styles.h3}>¡Disfruta y que tengas una buena cocción!</h3>
+          <h3 className={styles.h3}>
+            ¡Disfruta y que tengas una buena cocción!
+          </h3>
         </div>
         <div className={styles.image_container}>
           <Image
@@ -32,13 +40,15 @@ export default function LandingPage() {
             src="/img/landing.jpg"
             width={305}
             height={221}
-            alt='MamiCocina'
+            alt="MamiCocina"
           />
         </div>
         <div className={styles.button_snd_container}>
-          <button className={styles.button_snd}><Link href="/home">A COCINAR!</Link></button>
+          <button className={styles.button_snd}>
+            <Link href="/home">A COCINAR!</Link>
+          </button>
         </div>
       </div>
     </div>
-  )
+  );
 }
