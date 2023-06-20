@@ -3,6 +3,7 @@
     margin: 0px 35px !important;
     height: 100px;
 }
+
 .card {
     justify-content: center;
     padding-left: 10px;
@@ -14,21 +15,22 @@
     z-index: 1000;
     font-size: 16px;
     position: absolute;
-    top: 15px;
-    background-color: #e28668a1;
+    top: 0px;
+    background-color: #e28668d5;
     justify-content: center;
     display: flex;
     opacity: 1;
-    padding-left: 5px;
-    width: calc(100% - 10px);
+    padding: 0px 5px;
+    width: calc(100% - auto);
 }
 
 .image {
     width: 100%;
-    display: block;
+    height: 80px;
+    display: flex;
 }
 
-
+/* 
 @media (min-width: 460px){
     .mySlider {
         height: 150px;
@@ -45,7 +47,7 @@
     .image {
         height: 204px;
     }
-}
+} */
 
 /* .card:hover .name {
     display: flex;

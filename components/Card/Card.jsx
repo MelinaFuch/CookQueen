@@ -5,13 +5,15 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-export default function card () {
-    const recipes= data.results;
+export default function card ({recipes}) {
+    // const recipes= data.results;
     const settings = {
+        autoPlaySpeed: 500,
+        arrows: true,
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 4,
+        slidesToShow: 3,
         slidesToScroll: 2
     };
 
