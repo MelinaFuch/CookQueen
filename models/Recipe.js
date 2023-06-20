@@ -47,4 +47,4 @@ const RecipeSchema = new mongoose.Schema({
   // FALTARIA LIKES Y COMENTARIOS
 });
 
-export default mongoose.models.Recipe || mongoose.model("Recipe", RecipeSchema);
+export default mongoose.models?.Recipe || mongoose.model("Recipe", RecipeSchema);
