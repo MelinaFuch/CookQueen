@@ -34,7 +34,6 @@ export default async function handler(req, res) {
             }
 
         case 'DELETE':
-            // const { deleted } = req.query;
             try {
                 const recipe = await Recipe.findByIdAndUpdate(
                     id, {deleted: 'si'},
