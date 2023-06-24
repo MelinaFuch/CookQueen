@@ -23,8 +23,12 @@ export default function card ({recipes}) {
             {
                 recipes.map(recipe => (
                     <div className={styles.card} key={recipe.id}>
-                        <img className={styles.image} src={recipe.image} alt={recipe.title} />
-                        <p className={styles.name}>{recipe.title}</p>
+                        <div>
+                            <img className={styles.image} src={recipe.image} alt={recipe.title} />
+                        </div>
+                        <div>
+                            <p className={styles.name}>{recipe.title}</p>
+                        </div>
                     </div>
                 ))
             }

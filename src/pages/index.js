@@ -29,12 +29,8 @@ export default function LandingPage() {
             creadas por una madre imaginativa y creativa. Además, puedes
             contactar a esta talentosa persona para pedirle consejos o encargar
             alguna comida o receta en particular.
-          </h3>
-          <h3 className={styles.h3}>
             ¡Disfruta y que tengas una buena cocción!
           </h3>
-        </div>
-        <div className={styles.image_container}>
           <Image
             className={styles.image}
             src="/img/landing.jpg"
