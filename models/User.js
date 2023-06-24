@@ -9,6 +9,9 @@ const RecipeSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  type: {
+    enum: ["user", "admin"],
+  },
   image: {
     type: Buffer,
     default:
