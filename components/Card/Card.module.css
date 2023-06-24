@@ -1,19 +1,19 @@
 .mySlider {
     display: flex !important;
     margin: 0px 35px !important;
-    height: 100px;
+    height: 150px;
 }
 
 .card {
-    justify-content: center;
+    /* height: 100px;
     padding-left: 10px;
     position: relative;
-    top: 25px;
+    top: 25px; */
 }
 
 .name {
     z-index: 1000;
-    font-size: 16px;
+    font-size: 18px;
     position: absolute;
     top: 0px;
     background-color: #e28668d5;
@@ -26,7 +26,7 @@
 
 .image {
     width: 100%;
-    height: 80px;
+    height: 100%;
     display: flex;
 }
 
