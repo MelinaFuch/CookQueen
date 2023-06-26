@@ -7,7 +7,6 @@ import Card from "../../../components/Card/Card";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import data from "../../data";
 import Recipe from "../../../models/Recipe";
 import conectionDB from "../../../lib/dbConnect";
 
