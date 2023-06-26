@@ -1,7 +1,5 @@
 import conectionDB from "../../../../lib/dbConnect";
-import Recipe from "../../../../models/Recipe";
-import { editRecipe, deleteRecipe, getRecipe } from "../../controllers/recipesController"
-
+import { deleteUser, editUser, getUser } from "../../controllers/usersController";
 
 export default async function handler(req, res) {
     await conectionDB();
@@ -12,13 +10,13 @@ export default async function handler(req, res) {
     switch (method) {
         case 'PUT':
             try {
-                const recipe = await editRecipe(id, req.body);
+                const user = await editUser(id, req.body);
 
-                if (!recipe) {
+                if (!user) {
                     return res.status(404).json({success: false});
                 }
 
-                return res.status(200).json({success: true, data: recipe});
+                return res.status(200).json({success: true, data: user});
 
             } catch (error) {
                 return res.status(404).json({success: false, error});
@@ -26,13 +24,13 @@ export default async function handler(req, res) {
 
         case 'DELETE':
             try {
-                const recipe = await deleteRecipe(id);
+                const user = await deleteUser(id);
 
-                if (!recipe) {
+                if (!user) {
                     return res.status(404).json({success: false});
                 }
 
-                return res.status(200).json({success: true, data: recipe});
+                return res.status(200).json({success: true, data: user});
 
             } catch (error) {
                 return res.status(404).json({success: false, error});
@@ -40,13 +38,13 @@ export default async function handler(req, res) {
 
         case 'GET':
             try {
-                const recipe = await getRecipe(id);
+                const user = await getUser(id);
 
-                if (!recipe) {
+                if (!user) {
                     return res.status(404).json({success: false});
                 }
 
-                return res.status(200).json({success: true, data: recipe});
+                return res.status(200).json({success: true, data: user});
 
             } catch (error) {
                 return res.status(404).json({success: false});
