@@ -2,7 +2,7 @@ import styles from "@/styles/LandingPage.module.css";
 import Image from "next/image";
 import Link from "next/link";
 // import { useSelector,useDispatch } from "react-redux";
-import { useGetRecipeQuery } from "../../redux/recipesApi";
+import { useGetRecipeQuery } from "../../redux/recipes/recipeApi";
 
 export default function LandingPage() {
   
