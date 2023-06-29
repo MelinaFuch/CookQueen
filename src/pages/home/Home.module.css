@@ -13,7 +13,7 @@
 .container_logo {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     z-index: 1000;
     background: none;
     position: absolute;
