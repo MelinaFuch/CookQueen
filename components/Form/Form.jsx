@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { usePostRecipeMutation } from "../../redux/recipesApi";
+import { usePostRecipeMutation } from "../../redux/recipes/recipeApi";
 
 const Form = () => {
     const dispatch = useDispatch();
