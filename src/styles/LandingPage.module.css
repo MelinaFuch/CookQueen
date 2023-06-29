@@ -1,32 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap");
 
-.container {
+/* responsive celular */
+/* .container {
   display: flex;
-  min-height: 94vh;
+  margin: 0 auto;
   font-family: "Just Another Hand", cursive;
   color: #462c1d;
   background-color: #FFF;
 }
 
-.container__div {
+.sub_container {
   display: flex;
   flex-direction: column;
 }
 
-.logo_container {
+.left {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-top: 5px;
 }
 
-.h1_container {
+.container__title {
   display: flex;
   font-size: 21px;
   justify-content: center;
   margin-bottom: 20px;
 }
 
-.h1 {
+.title {
   display: flex;
   background: rgba(226, 135, 104, 0.87);
   width: 180px;
@@ -34,13 +35,7 @@
   justify-content: center;
 }
 
-.h3_container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.h3 {
+.text {
   display: flex;
   font-size: 19.5px;
   margin: 5px 80px;
@@ -48,38 +43,14 @@
   line-height: 1.5;
 }
 
-.image {
-  display: flex;
-  margin: 20px 50px 30px;
-}
-
-.button_container {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 5px;
-  position: relative;
-  margin-top: 19px;
-  margin-right: 17px;
-}
-
-.button_container__button {
-  background-color: #462c1d;
-  color: #e28668;
-  font-family: "Just Another Hand", cursive;
-  font-size: 17px;
-  border-radius: 250px;
-  padding: 7px;
-  border: none;
-}
-
-.button_snd_container {
+.container__button_aCocinar {
   display: flex;
   justify-content: center;
   margin-top: 5px;
   position: relative;
 }
 
-.button_snd {
+.button_aCocinar {
   background-color: #462c1d;
   color: #e28668;
   font-family: "Just Another Hand", cursive;
@@ -94,122 +65,189 @@
   margin-bottom: 30px;
 }
 
+.container__button_login {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+  position: relative;
+  margin-top: 19px;
+  margin-right: 17px;
+  z-index: 0;
+}
 
-@media screen and (min-width: 1200px) {
-  .container {
-    width: 100%;
-    /* max-width: 1200px; */
-    margin: 0 auto;
-    /* justify-content: center;
-    align-items: center; */
-    
-  }
-  .container__div {
-  max-width: 1200px;
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
+.button_login {
+  background-color: #462c1d;
+  color: #e28668;
+  font-family: "Just Another Hand", cursive;
+  font-size: 17px;
+  border-radius: 250px;
+  padding: 7px;
+  border: none;
+}
+
+
+.image {
+  display: none;
+} */
+
+.container {
+  display: flex;
   margin: 0 auto;
+  font-family: "Just Another Hand", cursive;
+  color: #462c1d;
+  background-color: #FFF;
+}
+  
+.sub_container {
+  margin: 1.5em;
+  display: flex;
   width: 100%;
 }
 
+.left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
 
-  
-  .h1 {
-    font-size: 120px;
-    border-radius: 100px;
-    background: rgba(226, 135, 104, 0.87);
-    width: 556px;
-    height: 117px;
-    flex-shrink: 0;
-  }
-  
-  .h3_container {
-    flex-direction: row;
-    /* margin: 5px 80px; */
-    width: 100%;
-  }
-  .h3 {
-    font-size: 55px;
-    /* width: 776px;
-    height: 382px; */
-    margin: 0;
-    line-height: 1.3;
-    width: 50%;
-    flex-direction: column;
-    padding-left: 1.5em;
-    /* flex-shrink: 0; */
-    /* margin: 101px 50px 64px 0; */
-    /* padding-left: 30px; */
-  }
-  
-  .logo_container {
-    border: 137px 551px 876px 1105px;
-  }
-  
-  .logo {
-    width: 72px;
-    height: 104px;
-    flex-shrink: 0;
-  }
-  
-  .image {
-    /* width: 825px;
-    height: 621px; */
-    width: 50%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    flex-shrink: 0;
-  }
-  .button_container__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 35px 63px 0 0;
-    width: 198px;
-    height: 34px;
-    flex-direction: column;
-    flex-shrink: 0;
-    font-size: 40px;
-    width: 248px;
-    height: 87px;
-    flex-shrink: 0;
-    border-radius: 100px;
-    background: #462C1D;
-  }
+.container__title {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
 
-    /* .button_container__button {
+.logo {
+  width: 4em;
+  height: 5em;
+  margin-left: 15em;
+}
+
+.title {
+  display: flex;
+  font-size: 6.5em;
+  border-radius: 100px;
+  background: rgba(226, 135, 104, 0.87);
+  width: 556px;
+  height: 117px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  font-size: 3.5em; 
+  margin: 1.5em 0;
+}
+
+.container__button_login {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button_login {
+  font-family: "Just Another Hand", cursive;
+  color: #E28768;
+  font-size: 2.3em;
+  width: 6em;
+  height: 2em;
+  flex-shrink: 0;
+  border-radius: 100px;
+  background: #462C1D;
+}
+
+.right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 14;
+  flex-shrink: 0;
+  margin: 3em 0;
+}
+
+.container__button_aCocinar {
+  display: flex;
+  justify-content: center;
+}
+
+.button_aCocinar{
+  width: 4.5em;
+  height: 1.5em;
+  border-radius: 2em;
+  font-family: "Just Another Hand", cursive;
+  background: #462C1D;
+  font-size: 64px;
+  color: #E28768;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 300) {
+  .container{
+    background-color: rebeccapurple;
+  }
+  .sub_container{
     background-color: #462c1d;
-    color: #e28668;
-    font-family: "Just Another Hand", cursive;
-    font-size: 17px;
-    border-radius: 250px;
-    padding: 7px;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 35px 63px 0 0;
-    width: 198px;
-    height: 34px;
-    flex-shrink: 0;
-  } */
-
-
-  
-  .button_snd_container {
-    display: flex;
-    border-radius: 100px;
-    background: #462C1D;
-    width: 228px;
-    height: 48px;
-    flex-direction: column;
-    flex-shrink: 0;
-    margin: 100px 0 120px 245px;
-  }
-  .button_snd{
-    font-size: 64px;
-    color: #E28768;
-    width: 306px;
-    height: 90px;
-    flex-shrink: 0;
   }
 }
 
+@media screen and (min-width: 1500px) {
+  .sub_container {
+    margin: 2.5em;
+  }
+
+  .title {
+    font-size: 7em;
+  }
+
+  .image{
+    aspect-ratio: 16 / 13;
+  }
+
+  .text {
+    font-size: 4em;
+  }
+
+  .button_login{
+    font-size: 3em;
+  }
+
+  .button_aCocinar {
+    font-size: 4.5em;
+  }
+
+  .logo {
+    width: 5em;
+    height: 6em;
+    margin-left: 15em;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .sub_container {
+    margin: 3.5em;
+  }
+
+  .image {
+    aspect-ratio: 16/12;
+    margin-top: 4em;
+    width: 90%;
+  }
+}
