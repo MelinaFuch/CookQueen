@@ -1,17 +1,8 @@
 import styles from "@/styles/LandingPage.module.css";
 import Image from "next/image";
 import Link from "next/link";
-// import { useSelector,useDispatch } from "react-redux";
-import { useGetRecipeQuery } from "../../redux/recipes/recipeApi";
 
 export default function LandingPage() {
-  
-  // const count = useSelector(state => state.recipeslice.Recipe);
-  // const dispatch = useDispatch();
-  const { data , error, isLoading, isFetching } = useGetRecipeQuery('64961b2ccf60660cb80a060d');
-  
-  if (isLoading || isFetching) return <h1>Loading...</h1>;
-  if (error) return <div>{console.log(error)}</div>
 
   return (
     <div className={styles.container}>
