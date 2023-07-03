@@ -11,9 +11,9 @@ const postUser = async (data) => {
     return user;
 }
 
-const deleteUser = async (id) => {
+const deleteUser = async (id, status, tipo) => {
     const user = await User.findByIdAndUpdate(
-        id, {deleted: 'si'},
+        id, status, tipo,
         {
             new: true,
             runValidators: true

@@ -1,5 +1,4 @@
 import conectionDB from "../../../../lib/dbConnect";
-import User from "../../../../models/User";
 import { getAllUsers, postUser } from '../../controllers/usersController'
 
 export default async function handler(req, res) {
@@ -10,7 +9,7 @@ export default async function handler(req, res) {
         //GET
         case "GET":
         try {
-            const users = getAllUsers();
+            const users = await getAllUsers();
             if (!users) return res.status(404).json({ success: false, error: "No se encontraron usuarios" });
             else return res.status(200).json({success: true, data: users});
         } catch (error) {
@@ -20,7 +19,7 @@ export default async function handler(req, res) {
         //POST
         case "POST":
             try {
-            const user = postUser(req.body);
+            const user = await postUser(req.body);
             return res.status(200).json({ success: true, user });
         } catch (error) {
             return res.status(400).json({ success: false, error });
