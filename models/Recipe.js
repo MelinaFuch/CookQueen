@@ -36,9 +36,8 @@ const RecipeSchema = new mongoose.Schema({
     type: String,
   },
   deleted: {
-    type: String,
-    enum: ["si", "no"],
-    default: "no",
+    type: Boolean,
+    default: false,
   },
   date: {
     type: Date,
