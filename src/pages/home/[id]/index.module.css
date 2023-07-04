@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap");
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 400px auto;
+  background-color: #ffe2b0;
+  min-height: 100vh;
+}
+
+.top {
+  grid-column: 1/4;
+  grid-row: 1/2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  border-right: 1px solid #462c1d80;
+}
+
+.right {
+  grid-column: 2/4;
+  grid-row: 2/3;
+
+  /* align-items: center; */
+}
+
+.images {
+  max-height: 400px;
+  width: 100%;
+  height: auto;
+}
+
+.title {
+  color: #462c1d;
+  background-color: #ebab95;
+  font-size: 7.5em;
+  position: absolute;
+  padding: 0 0.5em;
+  font-family: "Just Another Hand", cursive;
+}
+
+.subtitle {
+  font-size: 4em;
+  color: black;
+  background-color: #ebab95;
+  padding: 0 0.5em;
+  margin: 0.5em 0;
+  font-family: "Just Another Hand", cursive;
+}
+
+.container_left {
+  margin: 3em 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.container_right {
+  margin-top: 3em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
+
+.first_size {
+  font-size: 3em;
+}
+
+.container_ul {
+  margin-left: 2.5em;
+  padding: 2em;
+}
+
+.container_ul > li {
+  font-family: "Just Another Hand", cursive;
+}
+
+.container_ol {
+  margin-left: 8em;
+  padding: 3em;
+}
+
+.container_ol > li {
+  font-family: "Just Another Hand", cursive;
+}
+
+@media screen and (max-width: 1200px) {
+  .title {
+    font-size: 5.5em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 3.5em;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr auto auto;
+    background-color: #ffe2b0;
+    min-height: 100vh;
+  }
+  .top {
+    grid-column: 1/4;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .left {
+    grid-column: 1/4;
+    grid-row: 2/3;
+    border-right: 1px solid #462c1d80;
+  }
+
+  .right {
+    grid-column: 1/4;
+    grid-row: 3/4;
+  }
+}
