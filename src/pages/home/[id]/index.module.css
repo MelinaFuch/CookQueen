@@ -94,11 +94,21 @@
   .title {
     font-size: 5.5em;
   }
+
+  .container_ol {
+    margin-left: 3em;
+    padding: 3em;
+  }
 }
 
 @media screen and (max-width: 600px) {
-  .title {
+  /* .title {
     font-size: 3.5em;
+  } */
+
+  .container_ol {
+    margin-left: 1em;
+    padding: 3em;
   }
 
   .container {
@@ -125,5 +135,18 @@
   .right {
     grid-column: 1/4;
     grid-row: 3/4;
+  }
+
+  .container_left {
+    margin: 3em 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .title {
+    font-size: 4em;
   }
 }

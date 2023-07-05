@@ -15,14 +15,12 @@ function recipeDetail({ success, error, recipe }) {
     );
   }
 
-  const prueba1 =
-    "195 grs harina leudante\n150 grs azúcar\n1 huevo\n80 ml aceite vegetal\n120 ml leche\n100 grs arándanos\n1 cda Esencia de vainilla\n1 cdta polvo para hornear\nAzúcar extra para espolvorear cada muffins antes de llevarlos al horno\nPirotines";
+  const Ingredients = recipe.ingredients;
 
-  const prueba2 =
-    "Colocar en un bowl la manteca y el azúcar. Batir a mano o con batidora eléctrica hasta obtener una crema.\nAñadir los huevos, esencia de vainilla y batir nuevamente para incorporarlos.\nColocar el polvo de hornear junto con la harina y tamizarlos dentro del bowl de a poco, intercalando con la leche a medida que se incorpora.\nAñadir los arándanos y mezclar con espátula para incorporarlos.\nDisponer un molde para muffins, colocar “pirotines” y comenzar a rellenar sin llegar al borde del pirotín.\nUna vez que todos los pirotines están rellenos, preparar el crumble.En un bowl chico, colocar todos los ingredientes del Crumble (manteca, harina y azúcar).Mezclar haciendo presión con los dedos para evitar generar calor que funda la manteca.Se debe obtener un “arenado”.Cubrir cada muffin con un poco del crumble.\nHornear a temperatura media (180ºC) durante 20 minutos.\nRetirar, desmoldar, dejar enfriar y disfrutar de estos deliciosos Muffins!!";
+  const Description = recipe.description;
 
-  const prueba3 = prueba1.split("\n");
-  const prueba4 = prueba2.split("\n");
+  const recipeIngredients = Ingredients.split("\n");
+  const recipeDescription = Description.split("\n");
   return (
     <div className={style.container}>
       {/* {console.log(recipe)} */}
@@ -35,7 +33,7 @@ function recipeDetail({ success, error, recipe }) {
           <p className={style.subtitle}>Ingredientes</p>
           {/* <p className={style.first_size}>{recipe.ingredients}</p> */}
           <ul className={style.container_ul}>
-            {prueba3.map((e) => (
+            {recipeIngredients.map((e) => (
               <li key={e} className={style.first_size}>
                 {e}
               </li>
@@ -48,7 +46,7 @@ function recipeDetail({ success, error, recipe }) {
           <p className={style.subtitle}>Paso a Paso</p>
           {/* <p className={style.first_size}>{recipe.description}</p> */}
           <ol className={style.container_ol}>
-            {prueba4.map((e) => (
+            {recipeDescription.map((e) => (
               <li key={e} className={style.first_size}>
                 {e}
               </li>
