@@ -24,19 +24,39 @@ export default async function handler(req, res) {
                 return res.status(404).json({success: false, error});
             }
 
-        case 'DELETE':
-            try {
-                const recipe = await deleteRecipe(id);
+            case 'DELETE':
+                try {
+                    const { deleted } = req.query; // Obtiene el valor de deleted desde req.query
+                    console.log(req.query, "soy el query delete");
 
-                if (!recipe) {
-                    return res.status(404).json({success: false});
-                }
+                    const recipe = await deleteRecipe(id, deleted);
 
-                return res.status(200).json({success: true, data: recipe});
+                    if (!recipe) {
+                         return res.status(404).json({ success: false });
+                        }
 
-            } catch (error) {
-                return res.status(404).json({success: false, error});
-            }
+                    return res.status(200).json({ success: true, data: recipe });
+
+                } catch (error) {
+                return res.status(404).json({ success: false, error });
+                 }
+
+        // case 'DELETE':
+        //     try {
+        //         const deleted = req.query.deleted
+        //         console.log(req.query,"soy el query delete")
+
+        //         const recipe = await deleteRecipe(id, deleted);
+
+        //         if (!recipe) {
+        //             return res.status(404).json({success: false});
+        //         }
+
+        //         return res.status(200).json({success: true, data: recipe});
+
+        //     } catch (error) {
+        //         return res.status(404).json({success: false, error});
+        //     }
 
         case 'GET':
             try {
