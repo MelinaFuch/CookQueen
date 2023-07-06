@@ -26,16 +26,16 @@ export default async function handler(req, res) {
 
         case 'DELETE':
             try {
-                const recipe = await deleteRecipe(id);
+                const { deleted } = req.query;
+                const recipe = await deleteRecipe(id, deleted);
 
                 if (!recipe) {
-                    return res.status(404).json({success: false});
+                    return res.status(404).json({ success: false });
                 }
-
-                return res.status(200).json({success: true, data: recipe});
+                return res.status(200).json({ success: true, data: recipe });
 
             } catch (error) {
-                return res.status(404).json({success: false, error});
+                return res.status(404).json({ success: false, error });
             }
 
         case 'GET':
@@ -52,7 +52,7 @@ export default async function handler(req, res) {
                 return res.status(404).json({success: false});
             }
 
-            default:
-                return res.status(500).json({success: false, error: 'Falla en el servidor'});
+        default:
+            return res.status(500).json({success: false, error: 'Falla en el servidor'});
     }
 }

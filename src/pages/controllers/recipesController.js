@@ -16,10 +16,10 @@ const postRecipe = async (data) => {
     return recipe;
 }
 
-const deleteRecipe = async (id) => {
-    const recipeDeleted = await Recipe.findById(id).lean()
+const deleteRecipe = async (id, deleted) => {
+    // const recipeDeleted = await Recipe.findById(id).lean()
     const recipe = await Recipe.findByIdAndUpdate(
-        id, {deleted: !recipeDeleted.deleted},
+        id, {deleted: deleted},
         {
             new: true,
             runValidators: true
