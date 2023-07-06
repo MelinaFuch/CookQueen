@@ -24,39 +24,19 @@ export default async function handler(req, res) {
                 return res.status(404).json({success: false, error});
             }
 
-            case 'DELETE':
-                try {
-                    const { deleted } = req.query; // Obtiene el valor de deleted desde req.query
-                    console.log(req.query, "soy el query delete");
+        case 'DELETE':
+            try {
+                const { deleted } = req.query;
+                const recipe = await deleteRecipe(id, deleted);
 
-                    const recipe = await deleteRecipe(id, deleted);
+                if (!recipe) {
+                    return res.status(404).json({ success: false });
+                }
+                return res.status(200).json({ success: true, data: recipe });
 
-                    if (!recipe) {
-                         return res.status(404).json({ success: false });
-                        }
-
-                    return res.status(200).json({ success: true, data: recipe });
-
-                } catch (error) {
+            } catch (error) {
                 return res.status(404).json({ success: false, error });
-                 }
-
-        // case 'DELETE':
-        //     try {
-        //         const deleted = req.query.deleted
-        //         console.log(req.query,"soy el query delete")
-
-        //         const recipe = await deleteRecipe(id, deleted);
-
-        //         if (!recipe) {
-        //             return res.status(404).json({success: false});
-        //         }
-
-        //         return res.status(200).json({success: true, data: recipe});
-
-        //     } catch (error) {
-        //         return res.status(404).json({success: false, error});
-        //     }
+            }
 
         case 'GET':
             try {
@@ -72,7 +52,7 @@ export default async function handler(req, res) {
                 return res.status(404).json({success: false});
             }
 
-            default:
-                return res.status(500).json({success: false, error: 'Falla en el servidor'});
+        default:
+            return res.status(500).json({success: false, error: 'Falla en el servidor'});
     }
 }
