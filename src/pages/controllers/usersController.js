@@ -13,7 +13,7 @@ const postUser = async (data) => {
 
 const deleteUser = async (id, status, tipo) => {
     const user = await User.findByIdAndUpdate(
-        id, status, tipo,
+        id, {status: status, tipo: tipo},
         {
             new: true,
             runValidators: true
