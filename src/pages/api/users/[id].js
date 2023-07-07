@@ -24,7 +24,7 @@ export default async function handler(req, res) {
 
         case 'DELETE':
             try {
-                const {status, tipo} = req.body;
+                const {status, tipo} = req.query;
                 const user = await deleteUser(id, status, tipo);
 
                 if (!user) {
