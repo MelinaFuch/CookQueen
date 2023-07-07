@@ -1,6 +1,6 @@
 import conectionDB from "../../../../lib/dbConnect";
 import Recipe from "../../../../models/Recipe";
-import { createFilters } from "@/pages/utils/functions";
+import { createFilters } from "@/pages/utils/filterRecipeBack";
 import { getRecipes, getAllRecipes, postRecipe } from "@/pages/controllers/recipesController"
 
 export default async function handler(req, res) {
