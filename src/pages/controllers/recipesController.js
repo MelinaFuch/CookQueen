@@ -1,11 +1,11 @@
 import Recipe from "../../../models/Recipe";
 
-const getRecipes = async () => {
+const getAllRecipes = async () => {
     const recipes = await Recipe.find().sort({ date: -1 });
     return recipes;
 }
 
-const getAllRecipes = async (filters) => {
+const getFiltersRecipes = async (filters) => {
     const recipes = await Recipe.find(filters);
     return recipes;
 };
@@ -46,8 +46,8 @@ const getRecipe = async (id) => {
 }
 
 module.exports = {
-    getRecipes,
     getAllRecipes,
+    getFiltersRecipes,
     postRecipe,
     deleteRecipe,
     editRecipe,

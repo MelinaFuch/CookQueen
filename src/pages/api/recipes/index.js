@@ -1,7 +1,7 @@
 import conectionDB from "../../../../lib/dbConnect";
 import Recipe from "../../../../models/Recipe";
 import { createFilters } from "@/pages/utils/filterRecipeBack";
-import { getRecipes, getAllRecipes, postRecipe } from "@/pages/controllers/recipesController"
+import { getAllRecipes, getFiltersRecipes, postRecipe } from "@/pages/controllers/recipesController"
 
 export default async function handler(req, res) {
   await conectionDB();
@@ -12,12 +12,13 @@ export default async function handler(req, res) {
     case "GET":
       try {
         const { title, category, ingredients } = req.query;
+        console.log('query', req.query);
         let recipes;
-        if (!title && !category && !ingredients) recipes = await getRecipes();
+        if (!title && !category && !ingredients) recipes = await getAllRecipes();
         else if (title || category || ingredients) {
           const filters = createFilters(title, category, ingredients);
-          const filtersRecipes = await getAllRecipes(filters);
-          recipes = filtersRecipes.length ? filtersRecipes : [];
+          const filtersRecipes = await getFiltersRecipes(filters);
+          recipes = filtersRecipes;
         } else {
           return res.status(404).json({ success: false, error: "No se encontraron recetas" });
         }

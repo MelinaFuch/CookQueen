@@ -1,5 +1,5 @@
 const createFilters = (title, category, ingredients) => {
-    let filters = { deleted: "no" };
+    let filters = { deleted: "No" };
     if (title) filters.title = { $regex: title, $options: 'i' };
     if (category && [
         "Dulce",

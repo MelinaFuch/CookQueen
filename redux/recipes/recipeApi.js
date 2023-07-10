@@ -8,8 +8,9 @@ export const recipeApi = createApi({
     }),
     endpoints: (builder) => ({
         getAllRecipes: builder.query({
-            query: () => ({
+            query: ({title, ingredients}) => ({
                 url: "/api/recipes",
+                params: {title, ingredients}
             }),
         }),
         getRecipe: builder.query({
