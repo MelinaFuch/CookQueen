@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Recipe from "../../../models/Recipe";
 import conectionDB from "../../../lib/dbConnect";
-import NavBar from "../../../components/Nav/NavBar";
+import NavBar from "../../../components/NavBar/NavBar";
 
 export default function inicio({ recipess }) {
   const renderRecipes = (allRecipes, cantidad) => {
