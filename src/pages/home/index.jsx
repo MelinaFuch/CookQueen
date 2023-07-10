@@ -1,6 +1,3 @@
-// import Layout from "../../../components/Layout";
-// import Search from "../../../components/Search/Search";
-import Image from "next/image";
 import styles from "./Home.module.css";
 import SliderCard from "../../../components/Slider/SliderCard";
 import Card from "../../../components/Card/Card";
@@ -9,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Recipe from "../../../models/Recipe";
 import conectionDB from "../../../lib/dbConnect";
+import NavBar from "../../../components/Nav/NavBar";
 
 export default function inicio({ recipess }) {
   const renderRecipes = (allRecipes, cantidad) => {
@@ -30,45 +28,10 @@ export default function inicio({ recipess }) {
     arrows: false,
     slidesToScroll: 1,
   };
-  // const recipes = data.results;
 
   return (
     <div className={styles.container}>
-      <nav className={styles.nav}>
-        <div className={styles.container_logo}>
-          <Image
-            className={styles.logo}
-            src="/img/cookqueen.jpg"
-            width={204}
-            height={68}
-            alt="logo"
-          />
-        </div>
-        <div className={styles.nav_input}>
-          <input
-            type="text"
-            placeholder="       Busca ingredientes o recetas..."
-            maxLength="35"
-            autoComplete="off"
-            className={styles.input_text}
-          />
-          <Image
-            src="/img/buscar.png"
-            width={64}
-            height={64}
-            alt="lupa"
-            className={styles.lupa}
-          />
-        </div>
-        <div>
-          <Image
-            src="/img/barra-nav.svg"
-            width={118}
-            height={118}
-            alt="barra-nav"
-          />
-        </div>
-      </nav>
+      <NavBar/>
       <div>
         <Slider className={styles.slider} {...settings}>
           {renderRecipes(recipess, 5)}
