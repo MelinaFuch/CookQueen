@@ -1,33 +1,82 @@
 .mySlider {
-    display: flex !important;
-    margin: 0px 35px !important;
-    height: 150px;
+  /* display: flex;
+  margin: 0px 3em;
+  height: 13.75em;
+  flex-direction: row;
+  justify-content: space-around; */
+  margin: 6em 3.5em;
 }
 
 .card {
-    /* height: 100px;
+  /* height: 100px;
     padding-left: 10px;
     position: relative;
     top: 25px; */
+  /* margin: 0px 5em; */
 }
 
 .name {
-    z-index: 1000;
-    font-size: 18px;
-    position: absolute;
-    top: 0px;
-    background-color: #e28668d5;
-    justify-content: center;
-    display: flex;
-    opacity: 1;
-    padding: 0px 5px;
-    width: calc(100% - auto);
+  z-index: 1000;
+  font-size: 18px;
+  position: absolute;
+  top: 0px;
+  background-color: #e28668d5;
+  display: flex;
+  justify-content: center;
+  opacity: 1;
+  padding: 0px 5px;
+  width: calc(100% - auto);
 }
 
 .image {
-    width: 100%;
-    height: 100%;
-    display: flex;
+  width: 100%;
+  height: 100%;
+  height: 13.75em;
+  /* display: flex; */
+}
+
+.customNextArrow {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 6.5em;
+  color: #000;
+  position: absolute;
+  z-index: 999;
+  /* overflow: hidden; */
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.customPrevArrow {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 6.5em;
+  color: #000;
+  position: absolute;
+  z-index: 999;
+  padding-right: 2em;
+  /* font-weight: bold; */
+  /* overflow: hidden; */
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.customPrevArrow {
+  left: -35px;
+}
+
+.customNextArrow {
+  right: -20px;
 }
 
 /* 

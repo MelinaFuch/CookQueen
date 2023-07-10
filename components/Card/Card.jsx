@@ -6,6 +6,19 @@ import "slick-carousel/slick/slick-theme.css";
 
 export default function card({ recipes }) {
   // const recipes= data.results;
+
+  const PrevArrow = (props) => (
+    <div className={styles.customPrevArrow} onClick={props.onClick}>
+      <i className="fas fa-chevron-left">{"<"}</i>
+    </div>
+  );
+
+  const NextArrow = (props) => (
+    <div className={styles.customNextArrow} onClick={props.onClick}>
+      <i className="fas fa-chevron-right">{">"}</i>
+    </div>
+  );
+
   const settings = {
     autoPlaySpeed: 500,
     arrows: true,
@@ -14,6 +27,8 @@ export default function card({ recipes }) {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 2,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
   };
 
   return (

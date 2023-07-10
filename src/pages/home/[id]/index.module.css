@@ -42,6 +42,7 @@
   position: absolute;
   padding: 0 0.5em;
   font-family: "Just Another Hand", cursive;
+  font-weight: 500;
 }
 
 .subtitle {
@@ -51,6 +52,7 @@
   padding: 0 0.5em;
   margin: 0.5em 0;
   font-family: "Just Another Hand", cursive;
+  font-weight: 500;
 }
 
 .container_left {
@@ -79,6 +81,7 @@
 
 .container_ul > li {
   font-family: "Just Another Hand", cursive;
+  font-weight: 500;
 }
 
 .container_ol {
@@ -88,6 +91,7 @@
 
 .container_ol > li {
   font-family: "Just Another Hand", cursive;
+  font-weight: 500;
 }
 
 @media screen and (max-width: 1200px) {

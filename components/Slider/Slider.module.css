@@ -1,25 +1,26 @@
 .container {
-    display: flex;
+  display: flex;
 }
 .card {
-    display: flex;
-    width: 100% !important;
-    justify-content: center;
-    margin: 0px !important;
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 .title {
-    display: flex;
-    z-index: 1000;
-    font-size: 29px;
-    background: #e28668d2;
-    position: absolute;
-    bottom: 10px;
-    justify-content: center;
-    padding: 0 12px;
+  /* display: flex; */
+  z-index: 1000;
+  font-size: 29px;
+  background: #e28668d2;
+  position: absolute;
+  bottom: 10px;
+  /* justify-content: center; */
+  padding: 0 12px;
 }
 
 .image {
-    width: 100% !important;
-    min-height: 20em !important;
+  width: 100vw;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
 }
