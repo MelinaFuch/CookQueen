@@ -1,0 +1,34 @@
+.nav_input {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input_text {
+    background-color: #eeb299b0;
+    border: none;
+    border-radius: 3em;
+    width: 80%;
+    font-size: 3em;
+    height: 71px;
+    font-family: "Just Another Hand", cursive;
+    padding-left: .7em;
+}
+
+.input_text::placeholder {
+    color: black;
+    font-family: "Just Another Hand", cursive;
+}
+
+.searchButton {
+    background: transparent;
+    border: none;
+    display: flex;
+    position: relative;
+    right: 6em;
+}
+
+.lupa {
+    position: relative;
+}

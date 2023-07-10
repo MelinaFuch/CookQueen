@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./NavBar.module.css";
+import Search from "../Search/Search";
 
 function NavBar () {
     return (
@@ -13,30 +14,7 @@ function NavBar () {
                     alt="logo"
                 />
             </div>
-            <div className={styles.nav_input}>
-                <input
-                    type="text"
-                    placeholder="Busca ingredientes o recetas..."
-                    maxLength="35"
-                    autoComplete="off"
-                    className={styles.input_text}
-                />
-                <Image
-                    src="/img/buscar.png"
-                    width={64}
-                    height={64}
-                    alt="lupa"
-                    className={styles.lupa}
-                />
-            </div>
-            <div>
-                <Image
-                    src="/img/barra-nav.svg"
-                    width={118}
-                    height={118}
-                    alt="barra-nav"
-                />
-            </div>
+            <Search/>
         </nav>
     )
 }
