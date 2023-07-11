@@ -101,10 +101,11 @@
   display: flex;
   margin: 0 auto;
   font-family: "Just Another Hand", cursive;
+  font-weight: 500;
   color: #462c1d;
-  background-color: #FFF;
+  background-color: #fff;
 }
-  
+
 .sub_container {
   margin: 1.5em;
   display: flex;
@@ -143,7 +144,7 @@
 }
 
 .text {
-  font-size: 3.5em; 
+  font-size: 3.5em;
   margin: 1.5em 0;
 }
 
@@ -154,13 +155,14 @@
 
 .button_login {
   font-family: "Just Another Hand", cursive;
-  color: #E28768;
+  font-weight: 500;
+  color: #e28768;
   font-size: 2.3em;
   width: 6em;
   height: 2em;
   flex-shrink: 0;
   border-radius: 100px;
-  background: #462C1D;
+  background: #462c1d;
 }
 
 .right {
@@ -188,22 +190,23 @@
   justify-content: center;
 }
 
-.button_aCocinar{
+.button_aCocinar {
   width: 4.5em;
   height: 1.5em;
   border-radius: 2em;
   font-family: "Just Another Hand", cursive;
-  background: #462C1D;
+  font-weight: 500;
+  background: #462c1d;
   font-size: 64px;
-  color: #E28768;
+  color: #e28768;
   flex-shrink: 0;
 }
 
 @media screen and (max-width: 300) {
-  .container{
+  .container {
     background-color: rebeccapurple;
   }
-  .sub_container{
+  .sub_container {
     background-color: #462c1d;
   }
 }
@@ -217,7 +220,7 @@
     font-size: 7em;
   }
 
-  .image{
+  .image {
     aspect-ratio: 16 / 13;
   }
 
@@ -225,7 +228,7 @@
     font-size: 4em;
   }
 
-  .button_login{
+  .button_login {
     font-size: 3em;
   }
 

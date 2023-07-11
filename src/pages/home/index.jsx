@@ -27,11 +27,12 @@ export default function inicio({ recipess }) {
     slidesToShow: 1,
     arrows: false,
     slidesToScroll: 1,
+    width: "100%",
   };
 
   return (
     <div className={styles.container}>
-      <NavBar/>
+      <NavBar />
       <div>
         <Slider className={styles.slider} {...settings}>
           {renderRecipes(recipess, 5)}
