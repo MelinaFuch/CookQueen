@@ -12,7 +12,6 @@ export default async function handler(req, res) {
     case "GET":
       try {
         const { title, category, ingredients } = req.query;
-        console.log('query', req.query);
         let recipes;
         if (!title && !category && !ingredients) recipes = await getAllRecipes();
         else if (title || category || ingredients) {
@@ -30,10 +29,11 @@ export default async function handler(req, res) {
       //POST
       case "POST":
         try {
-        const recipe = await postRecipe(req.body);
-        return res.status(200).json({ success: true, recipe });
+          console.log('body', req.body);
+          const recipe = await postRecipe(req.body);
+          return res.status(200).json({ success: true, recipe });
       } catch (error) {
-        return res.status(400).json({ success: false, error });
+          return res.status(400).json({ success: false, error });
       }
     default:
       return res

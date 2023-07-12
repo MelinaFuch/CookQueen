@@ -3,17 +3,19 @@ const createFilters = (title, category, ingredients) => {
     if (title) filters.title = { $regex: title, $options: 'i' };
     if (category && [
         "Dulce",
+        "Agridulce",
         "Salado",
-        "Vegetariano",
-        "Pasta",
         "Desayuno/Merienda",
-        "Almuerzo",
+        "ALmuerzo",
+        "Vegetariano",
+        "Carnes",
+        "Pasta",
+        "Panes",
+        "Postres",
         "Para mascotas"
     ].includes(category)) filters.category = category;
-
     if (ingredients) filters.ingredients = { $regex: ingredients, $options: 'i' };
-
-    return filters; 
+    return filters;
 };
 
 module.exports = {
