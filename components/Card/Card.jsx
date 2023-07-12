@@ -1,4 +1,4 @@
-// import Link from "next/link";
+import Link from "next/link";
 import styles from "./Card.module.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -35,13 +35,13 @@ export default function card({ recipes }) {
     <Slider {...settings} className={styles.mySlider}>
       {recipes.map((recipe, index) => (
         <div className={styles.card} key={recipe._id}>
-          <div>
+          <Link href={`/home/${recipe._id}`} className={styles.link}>
             <img
               className={styles.image}
               src={recipe.image}
               alt={recipe.title}
             />
-          </div>
+          </Link>
           <div>
             <p className={styles.name}>{recipe.title}</p>
           </div>

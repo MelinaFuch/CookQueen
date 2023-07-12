@@ -79,6 +79,10 @@
   right: -20px;
 }
 
+.link {
+  text-decoration: none;
+  border: none;
+}
 /* 
 @media (min-width: 460px){
     .mySlider {
