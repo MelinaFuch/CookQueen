@@ -1,89 +1,186 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { usePostRecipeMutation } from "../../redux/recipes/recipeApi";
+import { Form, Field, Formik, ErrorMessage } from "formik";
+import styles from "./Form.module.css";
 
-const Form = () => {
-    const dispatch = useDispatch();
-    const [recipe, setRecipe] = useState({
-        title: '',
-        description: '',
-        ingredients: "",
-        category: "",
-        image:""
-    })
+const newRecipe = () => {
+    const [postRecipeMutation] = usePostRecipeMutation();
 
-    const [postRecipeMutation] = usePostRecipeMutation(); 
 
-    const handleChange = (event) => {
-        const { value, name } = event.target;
-        setRecipe({
-            ...recipe,
-            [name]: value
-        })
-    }
-
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        console.log(recipe)
-        // dispatch(postRecipeMutation(recipe)); // Utiliza la función mutate del hook
-        await postRecipeMutation(recipe);
-        alert("todo bien")
-
-    }
-
-    // useEffect(() => {
-    //     setRecipe(recipes.find(recipe => recipe.id === params.id));
-    // }, [params.id, tasks])
 
     return (
-        <form className="bg-zinc-800 max-w-sm p-4" onSubmit={handleSubmit}>
-            <label className="block text-xs font-bold" htmlFor="title">Title:</label>
-            <input 
-                className="w-full p-2 rounded-md bg-zinc-600 mb-2 mt-2"
-                type="text"
-                name="title" 
-                value={recipe.title} 
-                onChange={handleChange} 
-                placeholder="title" 
-            />
-               <label className="block text-xs font-bold" htmlFor="image">Image:</label>
-            <input 
-                className="w-full p-2 rounded-md bg-zinc-600 mb-2 mt-2"
-                type="text"
-                name="image" 
-                value={recipe.image} 
-                onChange={handleChange} 
-                placeholder="image" 
-        />
-           <label className="block text-xs font-bold" htmlFor="category">Category:</label>
-            <input 
-                className="w-full p-2 rounded-md bg-zinc-600 mb-2 mt-2"
-                type="text"
-                name="category" 
-                value={recipe.category} 
-                onChange={handleChange} 
-                placeholder="category" 
-        />
-           <label className="block text-xs font-bold" htmlFor="ingredients">Ingredients:</label>
-            <input 
-                className="w-full p-2 rounded-md bg-zinc-600 mb-2 mt-2"
-                type="text"
-                name="ingredients" 
-                value={recipe.ingredients} 
-                onChange={handleChange} 
-                placeholder="ingredients" 
-            />
-            <label className="block text-xs font-bold" htmlFor="description">Description:</label>
-            <textarea 
-                className="w-full p-2 rounded-md bg-zinc-600 mb-2 mt-2"
-                name="description" 
-                value={recipe.description} 
-                onChange={handleChange} 
-                placeholder="description" 
-            />
-            <button className="bg-indigo-600 px-2 py-1 rounded-sm text-sm">Save</button>
-        </form>
-    )
-}
+        <Formik
+            initialValues={{
+                title: "",
+                image: "",
+                category: [],
+                ingredients: "",
+                description: ""
+            }}
+            validate={(values) => {
+                let errors = {}
+                if (!values.title) {
+                    errors.title = "Por favor ingresa un título";
+                }
+                if (values.category.length === 0) {
+                    errors.category = "Por favor selecciona al menos una categoría";
+                }
+                if (!values.ingredients) {
+                    errors.ingredients = "Por favor escriba los ingredientes"
+                }
+                if (!values.description) {
+                    errors.description = "Por favor escriba una descripción"
+                }
+                if (!values.image) {
+                    errors.image = "Por favor selecciona una imagen";
+                }
+                return errors;
+            }}
 
-export default Form;
+            onSubmit={async (values, {resetForm}) => {
+                console.log({values});
+                await postRecipeMutation(values);
+                resetForm();
+            }}
+            // validateOnMount
+        >
+            {({ values, errors, setFieldValue, handleChange }) => { 
+            const handleDeleteCategory = (category) => {
+                const updatedCategories = values.category.filter((c) => c !== category);
+                setFieldValue("category", updatedCategories);
+            };
+
+            return(
+                <Form>
+                    <label>Nombre de la receta:</label>
+                    <Field 
+                        type="text"
+                        name="title" 
+                        placeholder="title" 
+                    />
+                    <ErrorMessage
+                        name="title"
+                        component={() => (
+                            <div className={styles.error}>{errors.title}</div>
+                        )}
+                    />
+                    <label>Imagen:</label>
+                    <Field 
+                        type="text"
+                        name="image" 
+                        placeholder="image" 
+                    />
+                    <ErrorMessage
+                        name="image"
+                        component={() => (
+                            <div className={styles.error}>{errors.image}</div>
+                        )}
+                    />
+                    <label>Categoria/s:</label>
+                    <Field 
+                        as="select"
+                        name="category"
+                        placeholder="category"
+                        multiple={false}
+                        onChange={(event) => {
+                            const {value} = event.target;
+                            if (!values.category.includes(value)) {
+                                setFieldValue("category", [...values.category, value]);
+                            }
+                        }}
+                    >
+                        <option value="">Seleccione una categoría</option>
+                        <option value="Dulce">Dulce</option>
+                        <option value="Agridulce">Agridulce</option>
+                        <option value="Salado">Salado</option>
+                        <option value="Desayuno/Merienda">Desayuno/Merienda</option>
+                        <option value="ALmuerzo">ALmuerzo</option>
+                        <option value="Vegetariano">Vegetariano</option>
+                        <option value="Carnes">Carnes</option>
+                        <option value="Pasta">Pasta</option>
+                        <option value="Panes">Panes</option>
+                        <option value="Postres">Postres</option>
+                        <option value="Para mascotas">Para mascotas</option>
+                    </Field>
+                    {/* <div className={styles.temp}>
+                        {
+                            values.category?.map(category => (
+                                <ul key={category}> 
+                                    <button className={styles.delete} type="button" key={category} value={category} 
+                                    // onClick={event => handleDeletecategory(event)}
+                                    >
+                                        x  {` ${category} `}
+                                    </button>
+                                    
+                                </ul>
+                            ))
+                        }
+                    </div> */}
+                    <div className={styles.temp}>
+                        {values.category?.map((category) => (
+                        <ul key={category}>
+                        <button
+                            className={styles.delete}
+                            type="button"
+                            onClick={() => handleDeleteCategory(category)}
+                        >
+                            x {`${category} `}
+                        </button>
+                        </ul>
+                        ))}
+                    </div>
+                    <ErrorMessage
+                        name="category"
+                        component={() => (
+                            <div className={styles.error}>{errors.category}</div>
+                        )}
+                    />
+                    <label>Ingredientes:</label>
+                    <Field
+                        as="textarea"
+                        name="ingredients"
+                        placeholder="ingredients"
+                        rows="7"
+                        cols="50"
+                    />
+                    <ErrorMessage
+                        name="ingredients"
+                        component={() => (
+                            <div className={styles.error}>{errors.ingredients}</div>
+                        )}
+                    />
+                    <label>Paso a paso:</label>
+                    <Field
+                        as="textarea"
+                        name="description"
+                        placeholder="description"
+                        rows="7"
+                        cols="50"
+                    />
+                    <ErrorMessage
+                        name="description"
+                        component={() => (
+                            <div className={styles.error}>{errors.description}</div>
+                        )}
+                    />
+                    <button 
+                        type="submit"
+                        disabled={
+                            errors.title ||
+                            errors.image ||
+                            errors.description ||
+                            errors.ingredients ||
+                            errors.category
+                        }
+                    >
+                        Subir receta
+                    </button>
+                </Form>
+            )
+            }}
+        </Formik>
+    );
+};
+
+export default newRecipe;
