@@ -60,7 +60,7 @@ const newRecipe = () => {
                     <Field 
                         type="text"
                         name="title" 
-                        placeholder="title" 
+                        placeholder="Escribe el nombre de tu receta..." 
                     />
                     <ErrorMessage
                         name="title"
@@ -72,7 +72,7 @@ const newRecipe = () => {
                     <Field
                         as="textarea"
                         name="ingredients"
-                        placeholder="ingredients"
+                        placeholder="Escribe los ingredientes de tu receta..."
                         rows="7"
                         cols="50"
                     />
@@ -86,7 +86,7 @@ const newRecipe = () => {
                     <Field
                         as="textarea"
                         name="description"
-                        placeholder="description"
+                        placeholder="Escribe el paso a paso de tu receta..."
                         rows="7"
                         cols="50"
                     />
