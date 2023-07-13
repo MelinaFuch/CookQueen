@@ -112,26 +112,26 @@
 }
 
 .submit:disabled {
-  color: #e28768;
-  background-color: #ab4205;
+  color: #462c1da2;
+  background-color: #be735aa5;
 }
 .error {
-  color: red;
-  font-size: 2em;
+  color: rgb(187, 55, 55);
+  font-size: 2.3em;
   position: relative;
   bottom: 1.5em;
 }
 
 .error_select {
-  color: red;
-  font-size: 2em;
+  color: rgb(187, 55, 55);
+  font-size: 2.3em;
   position: relative;
   bottom: 0.5em;
 }
 
 .error_image {
-  color: red;
-  font-size: 2em;
+  color: rgb(187, 55, 55);
+  font-size: 2.3em;
   /* position: relative; */
   /* bottom: 0.1em; */
 }
