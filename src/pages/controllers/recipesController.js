@@ -17,7 +17,6 @@ const postRecipe = async (data) => {
 }
 
 const deleteRecipe = async (id, deleted) => {
-    // const recipeDeleted = await Recipe.findById(id).lean()
     const recipe = await Recipe.findByIdAndUpdate(
         id, {deleted: deleted},
         {
