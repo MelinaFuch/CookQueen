@@ -8,36 +8,50 @@ function Profile  () {
 
     if (isLoading) return <div>Loading...</div>
     if (error) return <div>Error: {console.log(error)}</div>
+
     return (
-        <div>
+        <div className={styles.container}>
             <img
+                className={styles.user_image}
                 src={user.image}
                 alt="User-Image"
-                width={400}
-                height={400}
+                width={500}
+                height={500}
             />
-            <h3>Nombre de usuario:</h3>
-            <h3>{user.name}</h3>
-            <button>
-                <Image
-                    src={'/img/edit.jpg'}
-                    alt="edit"
-                    width={40}
-                    height={40}
-                />
-            </button>
-            <h3>Email:</h3>
-            <h3>{user.mail}</h3>
-            <button>
-                <Image
-                    src={'/img/edit.jpg'}
-                    alt="edit"
-                    width={40}
-                    height={40}
-                />
-            </button>
-            <h3>Contraseña:</h3>
-            <button>Cambiar contraseña</button>
+            <div className={styles.info_user}>
+                <div className={styles.container_props}>
+                    <h3 className={styles.prop_name}>Nombre de usuario:</h3>
+                    <h3 className={styles.prop_mail}>Email:</h3>
+                    <h3 className={styles.prop_password}>Contraseña:</h3>
+                </div>
+                <div className={styles.container_value}>
+                    <div className={styles.container_name}>
+                        <h3 className={styles.value_name}>{user.name}</h3>
+                        <button className={styles.button_edit}>
+                            <Image
+                                className={styles.image_edit}
+                                src={'/img/edit.jpg'}
+                                alt="edit"
+                                width={40}
+                                height={40}
+                            />
+                        </button>
+                    </div>
+                    <div className={styles.container_mail}>
+                        <h3 className={styles.value_mail}>{user.mail}</h3>
+                        <button className={styles.button_edit}>
+                            <Image
+                                className={styles.image_edit}
+                                src={'/img/edit.jpg'}
+                                alt="edit"
+                                width={50}
+                                height={50}
+                            />
+                        </button>
+                    </div>
+                    <button className={styles.edit_password}>Cambiar contraseña</button>
+                </div>
+            </div>
         </div>
     )
 }

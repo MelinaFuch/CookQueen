@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap");
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #ffe2b0;
+    color: #462c1d;
+    font-family: "Just Another Hand";
+    font-weight: 400;
+}
+
+.user_image {
+    display: flex;
+    border-radius: 15em;
+    margin-top: 3em;
+}
+
+.info_user {
+    display: flex;
+    margin-top: 5em;
+}
+
+.container_props {
+    flex-direction: column;
+    font-size: 3.5em;
+    margin-top: .5em;
+    margin-right: 1.5em;
+}
+
+.container_value {
+    margin-left: 1.5em;
+    flex-direction: column;
+    font-size: 3.5em;
+    margin-top: .5em;
+}
+
+.container_name {
+    display: flex;
+}
+
+.container_mail {
+    display: flex;
+}
+
+.prop_mail {
+    margin-top: .3em;
+
+}
+
+.value_mail {
+    margin-top: .3em;
+}
+
+.prop_password {
+    margin-top: .3em;
+}
+
+.button_edit {
+    border-radius: 15em;
+    width: 50px;
+    height: 50px;
+    margin-top: 2.5em;
+    margin-left: 0.7em;
+    border: none;
+}
+
+.image_edit {
+    border-radius: 15em;
+}
+
+.edit_password {
+    margin-top: .5em;
+    font-family: "Just Another Hand", cursive;
+    font-weight: 500;
+    color: #e28768;
+    font-size: 1.1em;
+    width: 5.4em;
+    height: 1.4em;
+    flex-shrink: 0;
+    border-radius: 100px;
+    background: #462c1d;
+}
