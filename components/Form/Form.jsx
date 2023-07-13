@@ -55,118 +55,121 @@ const newRecipe = () => {
             };
 
             return(
-                <Form className="form-container">
-                    <label>Nombre de la receta:</label>
-                    <Field 
-                        type="text"
-                        name="title" 
-                        placeholder="Escribe el nombre de tu receta..." 
-                    />
-                    <ErrorMessage
-                        name="title"
-                        component={() => (
-                            <div className={styles.error}>{errors.title}</div>
+                <div>
+                    <h1>¡SUBE TU SÚPER NUEVA RECETA!</h1>
+                    <Form className="form-container">
+                        <label>Nombre de la receta:</label>
+                        <Field 
+                            type="text"
+                            name="title" 
+                            placeholder="Escribe el nombre de tu receta..." 
+                        />
+                        <ErrorMessage
+                            name="title"
+                            component={() => (
+                                <div className={styles.error}>{errors.title}</div>
+                                )}
+                        />
+                        <label>Ingredientes:</label>
+                        <Field
+                            as="textarea"
+                            name="ingredients"
+                            placeholder="Escribe los ingredientes de tu receta..."
+                            rows="7"
+                            cols="50"
+                        />
+                        <ErrorMessage
+                            name="ingredients"
+                            component={() => (
+                                <div className={styles.error}>{errors.ingredients}</div>
                             )}
-                    />
-                    <label>Ingredientes:</label>
-                    <Field
-                        as="textarea"
-                        name="ingredients"
-                        placeholder="Escribe los ingredientes de tu receta..."
-                        rows="7"
-                        cols="50"
-                    />
-                    <ErrorMessage
-                        name="ingredients"
-                        component={() => (
-                            <div className={styles.error}>{errors.ingredients}</div>
-                        )}
-                    />
-                    <label>Paso a paso:</label>
-                    <Field
-                        as="textarea"
-                        name="description"
-                        placeholder="Escribe el paso a paso de tu receta..."
-                        rows="7"
-                        cols="50"
-                    />
-                    <ErrorMessage
-                        name="description"
-                        component={() => (
-                            <div className={styles.error}>{errors.description}</div>
-                        )}
-                    />
-                    {/* <label>Y/o sube un vídeo:</label> */}
-                    <label>Selecciona la(s) categoría(s) que encaje(n) con tu receta::</label>
-                    <Field 
-                        as="select"
-                        name="category"
-                        placeholder="category"
-                        multiple={false}
-                        onChange={(event) => {
-                            const {value} = event.target;
-                            if (!values.category.includes(value)) {
-                                setFieldValue("category", [...values.category, value]);
-                            }
-                        }}
-                    >
-                        <option value="">Elige la/s categoría/s</option>
-                        <option value="Dulce">Dulce</option>
-                        <option value="Agridulce">Agridulce</option>
-                        <option value="Salado">Salado</option>
-                        <option value="Desayuno/Merienda">Desayuno/Merienda</option>
-                        <option value="Almuerzo">Almuerzo</option>
-                        <option value="Vegetariano">Vegetariano</option>
-                        <option value="Carnes">Carnes</option>
-                        <option value="Pasta">Pasta</option>
-                        <option value="Panes">Panes</option>
-                        <option value="Postres">Postres</option>
-                        <option value="Para mascotas">Para mascotas</option>
-                    </Field>
-                    <div className={styles.buttonCategory}>
-                        {values.category?.map((category) => (
-                        <ul key={category}>
-                        <button
-                            className={styles.delete}
-                            type="button"
-                            onClick={() => handleDeleteCategory(category)}
+                        />
+                        <label>Paso a paso:</label>
+                        <Field
+                            as="textarea"
+                            name="description"
+                            placeholder="Escribe el paso a paso de tu receta..."
+                            rows="7"
+                            cols="50"
+                        />
+                        <ErrorMessage
+                            name="description"
+                            component={() => (
+                                <div className={styles.error}>{errors.description}</div>
+                            )}
+                        />
+                        {/* <label>Y/o sube un vídeo:</label> */}
+                        <label>Selecciona la(s) categoría(s) que encaje(n) con tu receta::</label>
+                        <Field 
+                            as="select"
+                            name="category"
+                            placeholder="category"
+                            multiple={false}
+                            onChange={(event) => {
+                                const {value} = event.target;
+                                if (!values.category.includes(value)) {
+                                    setFieldValue("category", [...values.category, value]);
+                                }
+                            }}
                         >
-                            x {`${category} `}
-                        </button>
-                        </ul>
-                        ))}
-                    </div>
-                    <ErrorMessage
-                        name="category"
-                        component={() => (
-                            <div className={styles.error}>{errors.category}</div>
+                            <option value="">Elige la/s categoría/s</option>
+                            <option value="Dulce">Dulce</option>
+                            <option value="Agridulce">Agridulce</option>
+                            <option value="Salado">Salado</option>
+                            <option value="Desayuno/Merienda">Desayuno/Merienda</option>
+                            <option value="Almuerzo">Almuerzo</option>
+                            <option value="Vegetariano">Vegetariano</option>
+                            <option value="Carnes">Carnes</option>
+                            <option value="Pasta">Pasta</option>
+                            <option value="Panes">Panes</option>
+                            <option value="Postres">Postres</option>
+                            <option value="Para mascotas">Para mascotas</option>
+                        </Field>
+                        <div className={styles.buttonCategory}>
+                            {values.category?.map((category) => (
+                            <ul key={category}>
+                            <button
+                                className={styles.delete}
+                                type="button"
+                                onClick={() => handleDeleteCategory(category)}
+                            >
+                                x {`${category} `}
+                            </button>
+                            </ul>
+                            ))}
+                        </div>
+                        <ErrorMessage
+                            name="category"
+                            component={() => (
+                                <div className={styles.error}>{errors.category}</div>
+                                )}
+                        />
+                        <label>¡Por último, sube una linda foto!:</label>
+                        <Field 
+                            type="text"
+                            name="image" 
+                            placeholder="image" 
+                        />
+                        <ErrorMessage
+                            name="image"
+                            component={() => (
+                                <div className={styles.error}>{errors.image}</div>
                             )}
-                    />
-                    <label>¡Por último, sube una linda foto!:</label>
-                    <Field 
-                        type="text"
-                        name="image" 
-                        placeholder="image" 
-                    />
-                    <ErrorMessage
-                        name="image"
-                        component={() => (
-                            <div className={styles.error}>{errors.image}</div>
-                        )}
-                    />
-                    <button 
-                        type="submit"
-                        disabled={
-                            errors.title ||
-                            errors.image ||
-                            errors.description ||
-                            errors.ingredients ||
-                            errors.category
-                        }
-                    >
-                        Subir receta
-                    </button>
-                </Form>
+                        />
+                        <button 
+                            type="submit"
+                            disabled={
+                                errors.title ||
+                                errors.image ||
+                                errors.description ||
+                                errors.ingredients ||
+                                errors.category
+                            }
+                        >
+                            SUBIR RECETA
+                        </button>
+                    </Form>
+                </div>
             )
         }}
         </Formik>
