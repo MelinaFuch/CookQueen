@@ -12,7 +12,7 @@ const RecipeSchema = new mongoose.Schema({
       "Agridulce",
       "Salado",
       "Desayuno/Merienda",
-      "ALmuerzo",
+      "Almuerzo",
       "Vegetariano",
       "Carnes",
       "Pasta",

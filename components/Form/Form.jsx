@@ -52,7 +52,7 @@ const newRecipe = () => {
             };
 
             return(
-                <Form>
+                <Form className="form-container">
                     <label>Nombre de la receta:</label>
                     <Field 
                         type="text"
@@ -63,78 +63,7 @@ const newRecipe = () => {
                         name="title"
                         component={() => (
                             <div className={styles.error}>{errors.title}</div>
-                        )}
-                    />
-                    <label>Imagen:</label>
-                    <Field 
-                        type="text"
-                        name="image" 
-                        placeholder="image" 
-                    />
-                    <ErrorMessage
-                        name="image"
-                        component={() => (
-                            <div className={styles.error}>{errors.image}</div>
-                        )}
-                    />
-                    <label>Categoria/s:</label>
-                    <Field 
-                        as="select"
-                        name="category"
-                        placeholder="category"
-                        multiple={false}
-                        onChange={(event) => {
-                            const {value} = event.target;
-                            if (!values.category.includes(value)) {
-                                setFieldValue("category", [...values.category, value]);
-                            }
-                        }}
-                    >
-                        <option value="">Seleccione una categoría</option>
-                        <option value="Dulce">Dulce</option>
-                        <option value="Agridulce">Agridulce</option>
-                        <option value="Salado">Salado</option>
-                        <option value="Desayuno/Merienda">Desayuno/Merienda</option>
-                        <option value="ALmuerzo">ALmuerzo</option>
-                        <option value="Vegetariano">Vegetariano</option>
-                        <option value="Carnes">Carnes</option>
-                        <option value="Pasta">Pasta</option>
-                        <option value="Panes">Panes</option>
-                        <option value="Postres">Postres</option>
-                        <option value="Para mascotas">Para mascotas</option>
-                    </Field>
-                    {/* <div className={styles.temp}>
-                        {
-                            values.category?.map(category => (
-                                <ul key={category}> 
-                                    <button className={styles.delete} type="button" key={category} value={category} 
-                                    // onClick={event => handleDeletecategory(event)}
-                                    >
-                                        x  {` ${category} `}
-                                    </button>
-                                    
-                                </ul>
-                            ))
-                        }
-                    </div> */}
-                    <div className={styles.temp}>
-                        {values.category?.map((category) => (
-                        <ul key={category}>
-                        <button
-                            className={styles.delete}
-                            type="button"
-                            onClick={() => handleDeleteCategory(category)}
-                        >
-                            x {`${category} `}
-                        </button>
-                        </ul>
-                        ))}
-                    </div>
-                    <ErrorMessage
-                        name="category"
-                        component={() => (
-                            <div className={styles.error}>{errors.category}</div>
-                        )}
+                            )}
                     />
                     <label>Ingredientes:</label>
                     <Field
@@ -164,6 +93,64 @@ const newRecipe = () => {
                             <div className={styles.error}>{errors.description}</div>
                         )}
                     />
+                    {/* <label>Y/o sube un vídeo:</label> */}
+                    <label>Categoria/s:</label>
+                    <Field 
+                        as="select"
+                        name="category"
+                        placeholder="category"
+                        multiple={false}
+                        onChange={(event) => {
+                            const {value} = event.target;
+                            if (!values.category.includes(value)) {
+                                setFieldValue("category", [...values.category, value]);
+                            }
+                        }}
+                    >
+                        <option value="">Elige la/s categoría/s</option>
+                        <option value="Dulce">Dulce</option>
+                        <option value="Agridulce">Agridulce</option>
+                        <option value="Salado">Salado</option>
+                        <option value="Desayuno/Merienda">Desayuno/Merienda</option>
+                        <option value="Almuerzo">Almuerzo</option>
+                        <option value="Vegetariano">Vegetariano</option>
+                        <option value="Carnes">Carnes</option>
+                        <option value="Pasta">Pasta</option>
+                        <option value="Panes">Panes</option>
+                        <option value="Postres">Postres</option>
+                        <option value="Para mascotas">Para mascotas</option>
+                    </Field>
+                    <div className={styles.buttonCategory}>
+                        {values.category?.map((category) => (
+                        <ul key={category}>
+                        <button
+                            className={styles.delete}
+                            type="button"
+                            onClick={() => handleDeleteCategory(category)}
+                        >
+                            x {`${category} `}
+                        </button>
+                        </ul>
+                        ))}
+                    </div>
+                    <ErrorMessage
+                        name="category"
+                        component={() => (
+                            <div className={styles.error}>{errors.category}</div>
+                            )}
+                    />
+                    <label>¡Por último, sube una linda foto!:</label>
+                    <Field 
+                        type="text"
+                        name="image" 
+                        placeholder="image" 
+                    />
+                    <ErrorMessage
+                        name="image"
+                        component={() => (
+                            <div className={styles.error}>{errors.image}</div>
+                        )}
+                    />
                     <button 
                         type="submit"
                         disabled={
@@ -178,7 +165,7 @@ const newRecipe = () => {
                     </button>
                 </Form>
             )
-            }}
+        }}
         </Formik>
     );
 };

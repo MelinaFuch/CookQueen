@@ -6,7 +6,7 @@ const createFilters = (title, category, ingredients) => {
         "Agridulce",
         "Salado",
         "Desayuno/Merienda",
-        "ALmuerzo",
+        "Almuerzo",
         "Vegetariano",
         "Carnes",
         "Pasta",
