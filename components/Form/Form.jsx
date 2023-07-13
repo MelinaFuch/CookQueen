@@ -24,7 +24,10 @@ const newRecipe = () => {
                     errors.title = "Por favor ingresa un título";
                 }
                 if (values.category.length === 0) {
-                    errors.category = "Por favor selecciona al menos una categoría";
+                    errors.category = "Por favor selecciona una categoría";
+                }
+                if (values.category.length < 2) {
+                    errors.category = "Por favor, selecciona más de una categoría"
                 }
                 if (!values.ingredients) {
                     errors.ingredients = "Por favor escriba los ingredientes"
@@ -94,7 +97,7 @@ const newRecipe = () => {
                         )}
                     />
                     {/* <label>Y/o sube un vídeo:</label> */}
-                    <label>Categoria/s:</label>
+                    <label>Selecciona la(s) categoría(s) que encaje(n) con tu receta::</label>
                     <Field 
                         as="select"
                         name="category"
