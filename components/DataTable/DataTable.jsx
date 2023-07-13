@@ -54,7 +54,7 @@ function Datatable() {
     const handleSelectDeletedRecipes = async (row, event) => {
         const deleted = event.target.value;
         const recipeId = row._id;
-    
+
         try {
             await deleteRecipe({ id: recipeId, deleted: deleted });
             setDeletedRecipes((prevDeletedRecipes) => ({
@@ -91,7 +91,7 @@ function Datatable() {
 
     const columnsRecipes = [
         { name: 'Título', selector: (row) => row.title, sortable: true },
-        { name: 'Categoría', selector: (row) => row.category, sortable: true },
+        { name: 'Categoría', selector: (row) => row.category.map(category =><p>{category}</p>), sortable: true },
         { name: 'Imagen', selector: (row) => <img src={row.image} width={50} height={40}/> },
         {
             name: "Eliminado",
@@ -193,6 +193,7 @@ function Datatable() {
 
     if (error) return (
         <div>
+            {console.log(allRecipes)}
             Error: {error.message}
         </div>
     )

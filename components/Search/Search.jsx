@@ -1,11 +1,11 @@
 import { useState } from "react";
 import styles from "./Search.module.css"
 import Image from "next/image";
-import { useGetAllRecipesQuery } from "../../redux/recipes/recipeApi";
+import { useGetFiltersRecipesQuery } from "../../redux/recipes/recipeApi";
 
 function Search () {
     const [search, setSearch] = useState("");
-    const {data: allRecipes, isLoading, isError} = useGetAllRecipesQuery({
+    const {data: filtersRecipes, isLoading, isError} = useGetFiltersRecipesQuery({
         title: search, 
         // ingredients: search
     });
@@ -16,7 +16,7 @@ function Search () {
     };
 
     const inputSearch = async () => {
-        isError ? console.log(isError) : console.log({allRecipes})
+        isError ? console.log(isError) : console.log({filtersRecipes})
     }
 
     return (
