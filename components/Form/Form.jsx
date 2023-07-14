@@ -152,7 +152,7 @@ const newRecipe = () => {
                       type="button"
                       onClick={() => handleDeleteCategory(category)}
                     >
-                      x {`${category} `}
+                      X {`${category} `}
                     </button>
                   </ul>
                 ))}

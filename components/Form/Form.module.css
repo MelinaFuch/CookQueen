@@ -10,26 +10,31 @@
   min-height: 100vh;
   width: 50%;
   margin: 2em auto;
-  font-family: "Just Another Hand", cursive;
+  font-family: "Just Another Hand";
   font-weight: 400;
   color: #462c1d;
 }
 
+.logo {
+  margin-top: 1.3em;
+}
+
 .title {
   font-size: 4em;
-  margin: 0.5em auto;
+  margin-top: .3em;
   font-weight: 400;
 }
 
 .label {
   display: block;
   font-size: 2.5em;
+  /* margin-top: .5em; */
+  margin: .7em 0 .5em 0;
 }
 
 .container_form {
   width: 90%;
   padding: 0 3em;
-  margin: 1em auto;
 }
 
 .field {
@@ -38,16 +43,16 @@
   background-color: #ebab95de;
   border-radius: 2em;
   border: none;
-  font-family: "Just Another Hand", cursive;
-  margin-bottom: 2em;
+  font-family: "Just Another Hand";
   height: 2em;
+  padding: .5em .7em;
+
 }
 
 .field::placeholder {
   font-size: 1em;
   color: #462c1d80;
-  padding: 1em 0 0 1em;
-  font-family: "Just Another Hand", cursive;
+  font-family: "Just Another Hand";
 }
 
 .textarea {
@@ -56,25 +61,24 @@
   background-color: #ebab95de;
   border-radius: 1em;
   border: none;
-  font-family: "Just Another Hand", cursive;
-  margin-bottom: 2em;
+  font-family: "Just Another Hand";
+  padding: .5em .7em;
 }
 
 .textarea::placeholder {
   font-size: 1em;
   color: #462c1d80;
-  padding-left: 1em;
-  font-family: "Just Another Hand", cursive;
-  padding: 0.5em 0 0 1em;
+  font-family: "Just Another Hand";
 }
 
 .select {
   background-color: #ebab95de;
-  font-size: 3em;
-  border-radius: 2em;
-  color: #462c1d80;
-  font-family: "Just Another Hand", cursive;
-  margin: 0.5em 0;
+    font-size: 2em;
+    border-radius: 2em;
+    color: #462c1d80;
+    font-family: "Just Another Hand";
+    padding: 0em 0.3em;
+    margin-bottom: 1em;
 }
 .buttonCategory {
   display: flex;
@@ -85,16 +89,16 @@
 .delete {
   background-color: #462c1d;
   color: #e28768;
-  font-size: 3em;
-  font-family: "Just Another Hand", cursive;
-  padding: 0em 1em;
+  font-size: 2.2em;
+  font-family: "Just Another Hand";
+  padding: 0.2em 0.8em;
   border-radius: 2em;
 }
 
 .video {
   background-color: #462c1d;
   color: #e28768;
-  font-family: "Just Another Hand", cursive;
+  font-family: "Just Another Hand";
   font-size: 2em;
   padding: 0.5em 1em;
   border-radius: 1.5em;
@@ -105,7 +109,7 @@
   margin: 2em auto;
   background-color: #462c1d;
   color: #e28768;
-  font-family: "Just Another Hand", cursive;
+  font-family: "Just Another Hand";
   font-size: 3em;
   padding: 0.5em 1em;
   border-radius: 1.5em;
