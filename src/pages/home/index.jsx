@@ -7,18 +7,17 @@ import "slick-carousel/slick/slick-theme.css";
 import Recipe from "../../../models/Recipe";
 import conectionDB from "../../../lib/dbConnect";
 import NavBar from "../../../components/NavBar/NavBar";
+import { useGetAllRecipesQuery } from "../../../redux/recipes/recipeApi";
 
-export default function inicio({ recipess }) {
+export default function inicio() {
+  const { data: recipes, isLoading, error} = useGetAllRecipesQuery();
+  const allRecipes = recipes?.data;
+
   const renderRecipes = (allRecipes, cantidad) => {
-    return allRecipes.slice(0, cantidad).map((recipe) => {
+    return allRecipes.slice(2, cantidad).map((recipe) => {
       return <SliderCard recipe={recipe} key={recipe._id} />;
     });
   };
-  // const renderCards = (allRecipes, cantidad) => {
-  //   return allRecipes.slice(0, cantidad).map((recipe) => {
-  //     return <Card recipe={recipe} key={recipe.id} />;
-  //   });
-  // };
 
   const settings = {
     dots: true,
@@ -30,48 +29,30 @@ export default function inicio({ recipess }) {
     width: "100%",
   };
 
+  if (isLoading) return <div>Loading...</div>
+  if (error) return <div>Error: {error}</div>
+
   return (
     <div className={styles.container}>
       <NavBar />
       <div>
         <Slider className={styles.slider} {...settings}>
-          {renderRecipes(recipess, 5)}
+          {renderRecipes(allRecipes, 7)}
         </Slider>
       </div>
-      <Card recipes={recipess} />
+      <Card recipes={allRecipes} />
       <div>
         <h1 className={styles.title}>¡Novedades!</h1>
-        <Card recipes={recipess} />
+        <Card recipes={allRecipes} />
       </div>
       <div>
         <h1 className={styles.title}>¡Para desayunar/merendar rico!</h1>
-        <Card recipes={recipess} />
+        <Card recipes={allRecipes} />
       </div>
       <div>
         <h1 className={styles.title}>¡A almorzar!</h1>
-        <Card recipes={recipess} />
+        <Card recipes={allRecipes} />
       </div>
     </div>
   );
 }
-
-export const getServerSideProps = async () => {
-  try {
-    await conectionDB();
-
-    const res = await Recipe.find();
-
-    const recipess = res.map((mov) => {
-      const recipe = mov.toObject();
-      recipe._id = `${recipe._id}`;
-      recipe.date = `${recipe.date}`;
-
-      return recipe;
-    });
-
-    return { props: { recipess } };
-  } catch (error) {
-    console.log(error);
-    return { props: { success: false, error: "¡Error!" } };
-  }
-};
