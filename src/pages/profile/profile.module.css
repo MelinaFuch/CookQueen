@@ -83,3 +83,117 @@
     border-radius: 100px;
     background: #462c1d;
 }
+
+@media screen and (max-width: 1200px) {
+    .user_image {
+        margin-top: 3.5em;
+        height: 25em;
+        width: 25em;
+    }
+
+    .container_props {
+        margin-right: .7em;
+        font-size: 3em;
+        margin-top: .3em;
+    }
+
+    .container_value {
+        margin-left: 1em;
+        font-size: 3em;
+        margin-top: .3em;
+    }
+
+    .button_edit {
+        width: 3em;
+        height: 3em;
+        margin-top: 3.8em;
+        margin-left: 0.6em;
+    }
+    
+    .image_edit {
+        width: 3em;
+        height: 3em;
+    }
+
+    .prop_mail {
+        margin-top: .9em;
+    }
+    
+    .prop_password {
+        margin-top: .8em;
+    }
+
+    .edit_password {
+        margin-top: .9em;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .info_user {
+        margin-top: 2em;
+    }
+
+    .user_image {
+        margin-top: 1em;
+        width: 12em;
+        height: 12em;
+    }
+
+    .container_props {
+        font-size: 1.6em;
+    }
+
+    .container_value {
+        font-size: 1.6em;
+    }
+
+    .button_edit {
+        width: 1.5em;
+        height: 1.5em;
+        margin-top: 1.9em;
+        margin-left: .4em;
+    }
+    
+    .image_edit {
+        width: 1.5em;
+        height: 1.5em;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .user_image {
+        width: 10em;
+        height: 10em;
+    }
+
+    .container_props {
+        margin-left: .2em;
+        font-size: 1.3em;
+    }
+
+    .container_value {
+        margin-left: .2em;
+        font-size: 1.3em;
+    }
+
+    .container_mail {
+        margin-top: .9em;
+    }
+
+    .value_mail {
+        margin-top: 0em;
+    }
+
+    .button_edit {
+        width: 1.2em;
+        height: 1.2em;
+        margin-top: 1.3em;
+        margin-left: .4em;
+    }
+    
+    .image_edit {
+        width: 1.2em;
+        height: 1.2em;
+    }
+}
