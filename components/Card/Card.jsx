@@ -33,7 +33,7 @@ export default function card({ recipes }) {
 
   return (
     <Slider {...settings} className={styles.mySlider}>
-      {recipes.map((recipe, index) => (
+      {recipes.map((recipe) => (
         <div className={styles.card} key={recipe._id}>
           <Link href={`/home/${recipe._id}`} className={styles.link}>
             <img
