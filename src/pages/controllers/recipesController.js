@@ -5,6 +5,11 @@ const getAllRecipes = async () => {
     return recipes;
 }
 
+const getRecipes = async () => {
+    const recipes = await Recipe.find({ deleted: "No" }).sort({ date: -1 });
+    return recipes;
+}
+
 const getFiltersRecipes = async (filters) => {
     const recipes = await Recipe.find(filters);
     return recipes;
@@ -46,6 +51,7 @@ const getRecipe = async (id) => {
 
 module.exports = {
     getAllRecipes,
+    getRecipes,
     getFiltersRecipes,
     postRecipe,
     deleteRecipe,

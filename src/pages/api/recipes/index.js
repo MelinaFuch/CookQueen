@@ -1,7 +1,6 @@
 import conectionDB from "../../../../lib/dbConnect";
-import Recipe from "../../../../models/Recipe";
 import { createFilters } from "@/pages/utils/filterRecipeBack";
-import { getAllRecipes, getFiltersRecipes, postRecipe } from "@/pages/controllers/recipesController"
+import { getRecipes, getFiltersRecipes, postRecipe } from "@/pages/controllers/recipesController";
 
 export default async function handler(req, res) {
   await conectionDB();
@@ -13,7 +12,7 @@ export default async function handler(req, res) {
       try {
         const { title, category, ingredients } = req.query;
         let recipes;
-        if (!title && !category && !ingredients) recipes = await getAllRecipes();
+        if (!title && !category && !ingredients) recipes = await getRecipes();
         else if (title || category || ingredients) {
           const filters = createFilters(title, category, ingredients);
           const filtersRecipes = await getFiltersRecipes(filters);
@@ -35,9 +34,8 @@ export default async function handler(req, res) {
       } catch (error) {
           return res.status(400).json({ success: false, error });
       }
-    default:
-      return res
-        .status(500)
-        .json({ success: false, error: "Falla del servidor" });
+
+      default:
+        return res.status(500).json({ success: false, error: "Falla del servidor" });
   }
 }

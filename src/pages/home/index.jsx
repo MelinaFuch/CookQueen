@@ -1,32 +1,20 @@
 import styles from "./Home.module.css";
 import SliderCard from "../../../components/Slider/SliderCard";
 import Card from "../../../components/Card/Card";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Recipe from "../../../models/Recipe";
-import conectionDB from "../../../lib/dbConnect";
+// import Slider from "react-slick";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 import NavBar from "../../../components/NavBar/NavBar";
-import { useGetAllRecipesQuery } from "../../../redux/recipes/recipeApi";
+import { useGetRecipesQuery } from "../../../redux/recipes/recipeApi";
 
 export default function inicio() {
-  const { data: recipes, isLoading, error} = useGetAllRecipesQuery();
+  const { data: recipes, isLoading, error} = useGetRecipesQuery();
   const allRecipes = recipes?.data;
 
   const renderRecipes = (allRecipes, cantidad) => {
     return allRecipes.slice(2, cantidad).map((recipe) => {
       return <SliderCard recipe={recipe} key={recipe._id} />;
     });
-  };
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    autoPlaySpeed: 500,
-    slidesToShow: 1,
-    arrows: false,
-    slidesToScroll: 1,
-    width: "100%",
   };
 
   if (isLoading) return <div>Loading...</div>
@@ -36,9 +24,10 @@ export default function inicio() {
     <div className={styles.container}>
       <NavBar />
       <div>
-        <Slider className={styles.slider} {...settings}>
+        {/* <Slider className={styles.slider} {...settings}>
           {renderRecipes(allRecipes, 7)}
-        </Slider>
+        </Slider> */}
+        <SliderCard recipes={allRecipes} />;
       </div>
       <Card recipes={allRecipes} />
       <div>

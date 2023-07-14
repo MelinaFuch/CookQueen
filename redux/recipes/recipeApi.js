@@ -9,6 +9,11 @@ export const recipeApi = createApi({
     endpoints: (builder) => ({
         getAllRecipes: builder.query({
             query: () => ({
+                url: "/api/recipes/admin",
+            }),
+        }),
+        getRecipes: builder.query({
+            query: () => ({
                 url: "/api/recipes",
             }),
         }),
@@ -52,6 +57,7 @@ export const recipeApi = createApi({
 
 export const {
     useGetAllRecipesQuery,
+    useGetRecipesQuery,
     useGetFiltersRecipesQuery,
     useGetRecipeQuery, 
     usePostRecipeMutation,

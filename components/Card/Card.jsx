@@ -25,7 +25,7 @@ export default function card({ recipes }) {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: recipes.length < 4 ? recipes.length : 4,
     slidesToScroll: 2,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
