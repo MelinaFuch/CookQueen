@@ -11,6 +11,7 @@ export default async function handler(req, res) {
     case "GET":
       try {
         const { title, category, ingredients } = req.query;
+        console.log(req.query)
         let recipes;
         if (!title && !category && !ingredients) recipes = await getRecipes();
         else if (title || category || ingredients) {

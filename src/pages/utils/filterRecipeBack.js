@@ -13,7 +13,7 @@ const createFilters = (title, category, ingredients) => {
         "Panes",
         "Postres",
         "Para mascotas"
-    ].includes(category)) filters.category = category;
+    ].includes(category)) filters.category = { $regex: category, $options: 'i' };
     if (ingredients) filters.ingredients = { $regex: ingredients, $options: 'i' };
     return filters;
 };

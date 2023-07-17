@@ -3,9 +3,10 @@ import styles from "./Card.module.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useGetFiltersRecipesQuery } from "../../redux/recipes/recipeApi";
 
-export default function card({ recipes }) {
-  // const recipes= data.results;
+export default function card ({ recipes }) {
+  const { data: filterRecipe, isLoading, error } = useGetFiltersRecipesQuery({category: 'Dulce'});
 
   const PrevArrow = (props) => (
     <div className={styles.customPrevArrow} onClick={props.onClick}>
@@ -31,8 +32,14 @@ export default function card({ recipes }) {
     nextArrow: <NextArrow />,
   };
 
+  if (isLoading) return <div>Loading...</div>
+  if (error) return <div>Error: {error}</div>
+
   return (
     <Slider {...settings} className={styles.mySlider}>
+
+      {/* {console.log(filterRecipe?.data)}; */}
+
       {recipes.map((recipe) => (
         <div className={styles.card} key={recipe._id}>
           <Link href={`/home/${recipe._id}`} className={styles.link}>
