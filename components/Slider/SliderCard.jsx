@@ -17,14 +17,18 @@ export default function slider({ recipes, key }) {
 
   return (
     <Slider className={styles.slider} {...settings}>
-        {recipes.map(recipe => (
-          <div className={styles.card}>
-            <Link href="#">
-              <img className={styles.image} src={recipe.image} alt={recipe.name} />
-            </Link>
-            <h1 className={styles.title}>{recipe.title}</h1>
-          </div>
-        ))}
+      {recipes.map((recipe) => (
+        <div className={styles.card}>
+          <Link href="#">
+            <img
+              className={styles.image}
+              src={recipe.image}
+              alt={recipe.name}
+            />
+          </Link>
+          <h1 className={styles.title}>{recipe.title}</h1>
+        </div>
+      ))}
     </Slider>
   );
 }
