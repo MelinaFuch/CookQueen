@@ -1,12 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { usePostRecipeMutation } from "../../redux/recipes/recipeApi";
 import { Form, Field, Formik, ErrorMessage } from "formik";
 import styles from "./Form.module.css";
 import Image from "next/image";
+import { Widget } from "@uploadcare/react-widget";
 
 const newRecipe = () => {
   const [postRecipeMutation] = usePostRecipeMutation();
+  // const UPLOADCARE_PUBLIC_KEY = process.env.UPLOADCARE_PUBLIC_KEY;
+
+  // useEffect(() => {
+  //   console.log("Es mi api key", process.env.UPLOADCARE_PUBLIC_KEY);
+  // }, []);
+
+  const regex = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+/;
+  // /^(https?:\/\/)?(www\.)?youtube\.com\/watch\?v=[A-Za-z0-9_-]{2}$/;
 
   return (
     <Formik
@@ -16,6 +25,7 @@ const newRecipe = () => {
         category: [],
         ingredients: "",
         description: "",
+        video: "",
       }}
       validate={(values) => {
         let errors = {};
@@ -30,12 +40,22 @@ const newRecipe = () => {
         if (!values.ingredients) {
           errors.ingredients = "Por favor escriba los ingredientes";
         }
-        if (!values.description) {
+        if (!values.description && !values.video) {
           errors.description = "Por favor escriba una descripción";
+          errors.video = "Por favor escribe la URL de su vídeo";
         }
-        // if (!values.image) {
-        //   errors.image = "Por favor selecciona una imagen";
-        // }
+        if (values.description && !values.video) {
+          errors.video = "";
+        }
+        if (!values.description && values.video) {
+          errors.description = "";
+          if (!regex.test(values.video)) {
+            errors.video = "Por favor escribe una URL válida";
+          }
+        }
+        if (!values.image) {
+          errors.image = "Por favor selecciona una imagen";
+        }
         return errors;
       }}
       onSubmit={async (values, { resetForm }) => {
@@ -108,7 +128,19 @@ const newRecipe = () => {
                 )}
               />
               <label className={styles.label}>Y/o sube un vídeo:</label>
-              <button className={styles.video}>Select Video</button>
+              <Field
+                type="text"
+                name="video"
+                placeholder="Escribe la URL del video de su receta..."
+                className={styles.field}
+              />
+              <ErrorMessage
+                name="video"
+                component={() => (
+                  <div className={styles.error}>{errors.video}</div>
+                )}
+              />
+              {/* <button className={styles.video}>Select Video</button> */}
               <label className={styles.label}>
                 Selecciona la(s) categoría(s) que encaje(n) con tu receta::
               </label>
@@ -161,8 +193,29 @@ const newRecipe = () => {
               <label className={styles.label}>
                 ¡Por último, sube una linda foto!:
               </label>
-              <button className={styles.video}>Select image</button>
-              {/* <Field type="text" name="image" placeholder="image" /> */}
+              <div className={styles.image}>
+                <Widget
+                  tabs="file url facebook gphotos instagram"
+                  locale="es"
+                  name="image"
+                  imagesOnly
+                  publicKey="da7189a159abe1a7e2ee"
+                  previewStep
+                  clearable
+                  onFileSelect={(file) => {
+                    if (!file) {
+                      setFieldValue("image", "");
+                      return;
+                    }
+                    file.done((fileInfo) => {
+                      setFieldValue("image", fileInfo.cdnUrl);
+                    });
+                  }}
+                  onChange={(file) => {
+                    setFieldValue("image", file);
+                  }}
+                />
+              </div>
               <ErrorMessage
                 name="image"
                 component={() => (

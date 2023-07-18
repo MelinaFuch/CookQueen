@@ -21,7 +21,7 @@
 
 .title {
   font-size: 4em;
-  margin-top: .3em;
+  margin-top: 0.3em;
   font-weight: 400;
 }
 
@@ -29,7 +29,7 @@
   display: block;
   font-size: 2.5em;
   /* margin-top: .5em; */
-  margin: .7em 0 .5em 0;
+  margin: 0.7em 0 0.5em 0;
 }
 
 .container_form {
@@ -45,8 +45,7 @@
   border: none;
   font-family: "Just Another Hand";
   height: 2em;
-  padding: .5em .7em;
-
+  padding: 0.5em 0.7em;
 }
 
 .field::placeholder {
@@ -62,7 +61,7 @@
   border-radius: 1em;
   border: none;
   font-family: "Just Another Hand";
-  padding: .5em .7em;
+  padding: 0.5em 0.7em;
 }
 
 .textarea::placeholder {
@@ -73,12 +72,12 @@
 
 .select {
   background-color: #ebab95de;
-    font-size: 2em;
-    border-radius: 2em;
-    color: #462c1d80;
-    font-family: "Just Another Hand";
-    padding: 0em 0.3em;
-    margin-bottom: 1em;
+  font-size: 2em;
+  border-radius: 2em;
+  color: #462c1d80;
+  font-family: "Just Another Hand";
+  padding: 0em 0.3em;
+  margin-bottom: 1em;
 }
 .buttonCategory {
   display: flex;
@@ -136,6 +135,23 @@
 .error_image {
   color: rgb(187, 55, 55);
   font-size: 2.3em;
-  /* position: relative; */
-  /* bottom: 0.1em; */
+}
+
+.image button {
+  background-color: #462c1d;
+  color: #e28768;
+  font-family: "Just Another Hand";
+  font-size: 2em;
+  padding: 0.5em 1em;
+  border-radius: 1.5em;
+}
+
+.image button:hover,
+.image button:focus {
+  background-color: #462c1d;
+  color: #e28768;
+  font-family: "Just Another Hand";
+  font-size: 2em;
+  padding: 0.5em 1em;
+  border-radius: 1.5em;
 }
