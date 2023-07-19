@@ -40,9 +40,9 @@ const newRecipe = () => {
         if (!values.ingredients) {
           errors.ingredients = "Por favor escriba los ingredientes";
         }
-        if (values.description && !values.video) {
-          return;
-        }
+        // if (values.description && !values.video) {
+        //   return;
+        // }
         if (!values.description && values.video) {
           if (!regex.test(values.video)) {
             errors.video = "Por favor escribe una URL válida";
@@ -54,14 +54,9 @@ const newRecipe = () => {
           }
         }
         if (!values.description && !values.video) {
-          errors.description = "Por favor escriba una descripción";
+          errors.description = "Por favor escriba el paso a paso de su receta";
+          errors.video = "Por favor escriba una url de su video";
         }
-
-        // if (!values.description && values.video) {
-        //   if (!regex.test(values.video)) {
-        //     errors.video = "Por favor escribe una URL válida";
-        //   }
-        // }
         if (!values.image) {
           errors.image = "Por favor selecciona una imagen";
         }
