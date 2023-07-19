@@ -40,7 +40,7 @@ const newRecipe = () => {
         if (!values.ingredients) {
           errors.ingredients = "Por favor escriba los ingredientes";
         }
-        if (!values.description && values.video) {
+        if (values.description && !values.video) {
           return;
         }
         if (!values.description && values.video) {
