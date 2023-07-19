@@ -53,9 +53,9 @@ const newRecipe = () => {
             errors.video = "Por favor escribe una URL válida";
           }
         }
-        // if (!values.description && !values.video) {
-        //   errors.description = "Por favor escriba una descripción";
-        // }
+        if (!values.description && !values.video) {
+          errors.description = "Por favor escriba una descripción";
+        }
 
         // if (!values.description && values.video) {
         //   if (!regex.test(values.video)) {
