@@ -18,7 +18,7 @@ const RecipeSchema = new mongoose.Schema({
       "Pasta",
       "Panes",
       "Postres",
-      "Para mascotas"
+      "Para mascotas",
     ],
     required: [true, "Por favor, seleccione al menos una categoría"],
   },
@@ -28,7 +28,6 @@ const RecipeSchema = new mongoose.Schema({
   },
   description: {
     type: String,
-    required: [true, "Por favor, ingrese una descripción"],
   },
   image: {
     type: String,
@@ -41,7 +40,7 @@ const RecipeSchema = new mongoose.Schema({
   },
   deleted: {
     type: String,
-    enum: ["Si", "No"], 
+    enum: ["Si", "No"],
     default: "No",
   },
   date: {
@@ -51,4 +50,5 @@ const RecipeSchema = new mongoose.Schema({
   // FALTARIA LIKES Y COMENTARIOS
 });
 
-export default mongoose.models?.Recipe || mongoose.model("Recipe", RecipeSchema);
+export default mongoose.models?.Recipe ||
+  mongoose.model("Recipe", RecipeSchema);
