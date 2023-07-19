@@ -40,22 +40,17 @@ const newRecipe = () => {
         if (!values.ingredients) {
           errors.ingredients = "Por favor escriba los ingredientes";
         }
-        // if (values.description && !values.video) {
-        //   return;
-        // }
-        if (!values.description && values.video) {
-          if (!regex.test(values.video)) {
-            errors.video = "Por favor escribe una URL válida";
-          }
-        }
-        if (values.description && values.video) {
+        if (
+          (!values.description && values.video) ||
+          (!values.description && !values.video)
+        ) {
           if (!regex.test(values.video)) {
             errors.video = "Por favor escribe una URL válida";
           }
         }
         if (!values.description && !values.video) {
           errors.description = "Por favor escriba el paso a paso de su receta";
-          errors.video = "Por favor escriba una url de su video";
+          errors.video = "Por favor escriba la url de su video";
         }
         if (!values.image) {
           errors.image = "Por favor selecciona una imagen";
