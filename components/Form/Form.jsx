@@ -40,28 +40,28 @@ const newRecipe = () => {
         if (!values.ingredients) {
           errors.ingredients = "Por favor escriba los ingredientes";
         }
-        // if (!values.description || !values.video) {
-        //   errors.description = "Por favor escriba una descripción";
-        //   errors.video = "Por favor escribe la URL de su vídeo";
-        // }
-        // if (values.description && !values.video) {
-        //   errors.video = "";
-        // }
-        // if (!values.description && values.video) {
-        //   errors.description = "";
-        //   if (!regex.test(values.video)) {
-        //     errors.video = "Por favor escribe una URL válida";
-        //   }
-        // }
-        if (!values.description && !values.video) {
-          errors.description = "Por favor escriba una descripción";
+        if (!values.description && values.video) {
+          return;
         }
-
         if (!values.description && values.video) {
           if (!regex.test(values.video)) {
             errors.video = "Por favor escribe una URL válida";
           }
         }
+        if (values.description && values.video) {
+          if (!regex.test(values.video)) {
+            errors.video = "Por favor escribe una URL válida";
+          }
+        }
+        // if (!values.description && !values.video) {
+        //   errors.description = "Por favor escriba una descripción";
+        // }
+
+        // if (!values.description && values.video) {
+        //   if (!regex.test(values.video)) {
+        //     errors.video = "Por favor escribe una URL válida";
+        //   }
+        // }
         if (!values.image) {
           errors.image = "Por favor selecciona una imagen";
         }
@@ -239,7 +239,8 @@ const newRecipe = () => {
                   errors.image ||
                   errors.description ||
                   errors.ingredients ||
-                  errors.category
+                  errors.category ||
+                  errors.video
                 }
               >
                 SUBIR RECETA
