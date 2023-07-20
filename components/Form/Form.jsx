@@ -5,6 +5,8 @@ import { Form, Field, Formik, ErrorMessage } from "formik";
 import styles from "./Form.module.css";
 import Image from "next/image";
 import { Widget } from "@uploadcare/react-widget";
+import Swal from "sweetalert2";
+import { useRouter } from "next/router";
 
 const newRecipe = () => {
   const [postRecipeMutation] = usePostRecipeMutation();
@@ -13,6 +15,8 @@ const newRecipe = () => {
   // useEffect(() => {
   //   console.log("Es mi api key", process.env.UPLOADCARE_PUBLIC_KEY);
   // }, []);
+
+  const router = useRouter();
 
   const regex = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+/;
   // /^(https?:\/\/)?(www\.)?youtube\.com\/watch\?v=[A-Za-z0-9_-]{2}$/;
@@ -61,6 +65,12 @@ const newRecipe = () => {
         console.log({ values });
         await postRecipeMutation(values);
         resetForm();
+        Swal.fire({
+          icon: "success",
+          title: "Felicitaciones!",
+          text: "La receta ha sido creada con exito",
+          button: "Ok",
+        }).then(() => router.push("/home"));
       }}
       // validateOnMount
     >

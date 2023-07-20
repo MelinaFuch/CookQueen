@@ -117,6 +117,7 @@
 .submit:disabled {
   color: #462c1da2;
   background-color: #be735aa5;
+  cursor: not-allowed;
 }
 
 .error {
