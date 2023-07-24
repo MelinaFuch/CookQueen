@@ -5,8 +5,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useGetFiltersRecipesQuery } from "../../redux/recipes/recipeApi";
 
-export default function card ({ recipes }) {
-  const { data: filterRecipe, isLoading, error } = useGetFiltersRecipesQuery({category: 'Dulce'});
+export default function card({ recipes }) {
+  const {
+    data: filterRecipe,
+    isLoading,
+    error,
+  } = useGetFiltersRecipesQuery({ category: "Dulce" });
 
   const PrevArrow = (props) => (
     <div className={styles.customPrevArrow} onClick={props.onClick}>
@@ -30,14 +34,39 @@ export default function card ({ recipes }) {
     slidesToScroll: 2,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
-  if (isLoading) return <div>Loading...</div>
-  if (error) return <div>Error: {error}</div>
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   return (
     <Slider {...settings} className={styles.mySlider}>
-
       {/* {console.log(filterRecipe?.data)}; */}
 
       {recipes.map((recipe) => (

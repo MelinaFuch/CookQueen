@@ -34,11 +34,20 @@
 }
 
 .title {
-  /* display: flex; */
-  /* justify-content: center; */
   text-align: center;
   margin-top: 25px;
   font-size: 6em;
   font-weight: 500;
-  /* margin: 100px 0; */
+}
+
+@media screen and (max-width: 800px) {
+  .title {
+    font-size: 4em;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .title {
+    font-size: 3em;
+  }
 }

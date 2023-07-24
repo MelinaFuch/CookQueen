@@ -34,3 +34,17 @@
   position: relative;
   right: 5.5em;
 }
+
+@media screen and (max-width: 800px) {
+  .nav {
+    margin: 1.5em 1em;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .nav {
+    margin: 1.5em 0em;
+    justify-content: space-around;
+  }
+}

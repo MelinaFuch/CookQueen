@@ -34,3 +34,23 @@
 .lupa {
   position: relative;
 }
+
+@media screen and (max-width: 800px) {
+  .nav_input {
+    display: none;
+  }
+
+  .image {
+    width: 5em;
+    display: flex;
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .image {
+    width: 3em;
+    display: flex;
+    align-self: center;
+  }
+}
