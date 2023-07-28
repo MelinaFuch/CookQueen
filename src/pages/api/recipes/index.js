@@ -20,11 +20,11 @@ export default async function handler(req, res) {
         else if (title || category || ingredients) {
           const filters = createFilters(title, category, ingredients);
           const filtersRecipes = await getFiltersRecipes(filters);
-          recipes = filtersRecipes;
-        } else {
-          return res
-            .status(404)
-            .json({ success: false, error: "No se encontraron recetas" });
+          recipes = filtersRecipes.length
+            ? filtersRecipes
+            : res
+                .status(200)
+                .json({ success: false, error: "No se encontraron recetas" });
         }
         return res.status(200).json({ success: true, data: recipes });
       } catch (error) {

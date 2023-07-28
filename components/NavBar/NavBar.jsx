@@ -15,6 +15,15 @@ function NavBar() {
         />
       </div>
       <Search />
+      <div>
+        <Image
+          src="/img/menu-nav.svg"
+          width={118}
+          height={118}
+          alt="menu-nav"
+          className={styles.image}
+        />
+      </div>
     </nav>
   );
 }
