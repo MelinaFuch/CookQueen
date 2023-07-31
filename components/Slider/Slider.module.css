@@ -19,7 +19,7 @@
 }
 
 .image {
-  width: 100vw;
+  width: 99vw;
   height: 400px;
   object-fit: cover;
   object-position: center;
