@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap");
+
+.container_menu {
+  /* width: 100vw; */
+  /* height: 100vh; */
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1000;
+}
+
+.linea {
+  background-color: #462c1d;
+  color: #462c1d8d;
+  width: 5em;
+}
+
+.container_open {
+  /* padding: 2em; */
+  top: 0;
+  right: 0;
+  align-items: flex-end;
+  font-family: "Just Another Hand";
+  font-weight: 500;
+  color: #462c1d;
+  flex-direction: column;
+  display: flex;
+  width: 100vw;
+  position: fixed;
+  width: 25em;
+  min-height: 100vh;
+  background: #f5a88ee3;
+}
+
+/* .container_close {
+  padding: 2em;
+} */
+
+.container_open .button_openMenu {
+  border: none;
+  border-radius: 50%;
+  margin: 1.5rem 2rem 0 0;
+}
+/* .container_categorias {
+  display: flex;
+} */
+
+.lista_menu {
+  text-align: center;
+  align-self: center;
+  font-size: 5em;
+  list-style: none;
+  margin-top: 0.7em;
+}
+
+.lista_categorias {
+  /* text-align: center; */
+  /* align-self: center; */
+  font-size: 0.8em;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  /* margin-top: 0.7em; */
+}
+
+.lista_categorias li {
+  justify-content: center;
+}
+
+.image_prueba {
+  /* padding: 24px 32px 0 0; */
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 800px) {
+  .image {
+    width: 5em;
+    display: flex;
+    align-self: flex-end;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .image {
+    width: 3em;
+    /* display: flex;
+    align-self: flex-end; */
+  }
+}

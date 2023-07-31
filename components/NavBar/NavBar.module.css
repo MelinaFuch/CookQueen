@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 124px;
 }
 
 .nav_input {
@@ -33,6 +34,11 @@
 .lupa {
   position: relative;
   right: 5.5em;
+}
+
+.button_menu {
+  border-radius: 50%;
+  border: none;
 }
 
 @media screen and (max-width: 800px) {
