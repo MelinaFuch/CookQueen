@@ -25,7 +25,6 @@ export default function inicio() {
         </div>
       ) : (
         <div>
-          {console.log(filteredRecipes, "home")}
           <div>
             <SliderCard recipes={allRecipes} />;
           </div>

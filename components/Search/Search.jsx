@@ -33,6 +33,30 @@ function Search() {
     setDoSearch(true);
   };
 
+  // useEffect(() => {
+  //   if (search === "") {
+  //     setDoSearch(false);
+  //     dispatch(setRecipes([]));
+  //   }
+
+  //   if (doSearch) {
+  //     if (filtersRecipes?.error && filtersRecipes?.success === false) {
+  //       Swal.fire({
+  //         icon: "error",
+  //         title: "Lo sentimos",
+  //         text: "No existe recetas con este nombre",
+  //         button: "Ok",
+  //       }).then(() => {
+  //         dispatch(setRecipes([]));
+  //         setDoSearch(false);
+  //         setSearch("");
+  //       });
+  //     } else {
+  //       dispatch(setRecipes(filtersRecipes));
+  //     }
+  //   }
+  // }, [filtersRecipes, isLoading, isError, doSearch, search]);
+
   useEffect(() => {
     if (search === "") {
       setDoSearch(false);
@@ -59,7 +83,6 @@ function Search() {
 
   return (
     <>
-      {console.log(filtersRecipes, "success")}
       <div className={styles.nav_input}>
         <form
           onSubmit={(event) => handleSubmit(event)}
