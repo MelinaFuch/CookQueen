@@ -43,7 +43,7 @@
   font-size: 6em;
   position: absolute;
   padding: 0 1em;
-  font-family: "Just Another Hand", cursive;
+  font-family: "Just Another Hand";
   font-weight: 500;
 }
 
@@ -54,7 +54,7 @@
   background-color: #ebab95;
   padding: 0 0.5em;
   margin: 0.5em 0;
-  font-family: "Just Another Hand", cursive;
+  font-family: "Just Another Hand";
   font-weight: 500;
 }
 
@@ -83,7 +83,7 @@
 }
 
 .container_ul > li {
-  font-family: "Just Another Hand", cursive;
+  font-family: "Just Another Hand";
   font-weight: 500;
   margin-bottom: 0.2em;
 }
@@ -96,7 +96,7 @@
 
 .container_ol > li {
   margin-bottom: 0.3em;
-  font-family: "Just Another Hand", cursive;
+  font-family: "Just Another Hand";
   font-weight: 500;
 }
 
