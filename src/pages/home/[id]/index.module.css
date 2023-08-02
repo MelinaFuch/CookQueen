@@ -47,7 +47,8 @@
   font-weight: 500;
 }
 
-.subtitle {
+.subtitle_description,
+.subtitle_ingredients {
   font-size: 4em;
   color: black;
   background-color: #ebab95;
@@ -61,7 +62,7 @@
   margin: 3em 2em;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .container_right {
@@ -84,14 +85,17 @@
 .container_ul > li {
   font-family: "Just Another Hand", cursive;
   font-weight: 500;
+  margin-bottom: 0.2em;
 }
 
 .container_ol {
-  margin-left: 8em;
+  margin-left: 5.5em;
   padding: 3em;
+  padding-bottom: 10em;
 }
 
 .container_ol > li {
+  margin-bottom: 0.3em;
   font-family: "Just Another Hand", cursive;
   font-weight: 500;
 }
