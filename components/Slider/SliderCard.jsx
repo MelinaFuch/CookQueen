@@ -19,7 +19,7 @@ export default function slider({ recipes, key }) {
     <Slider className={styles.slider} {...settings}>
       {recipes.slice(1, 6).map((recipe) => (
         <div className={styles.card}>
-          <Link href="#">
+          <Link href={`/home/${recipe._id}`} className={styles.link}>
             <img
               className={styles.image}
               src={recipe.image}

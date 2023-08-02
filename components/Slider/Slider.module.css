@@ -24,3 +24,8 @@
   object-fit: cover;
   object-position: center;
 }
+
+.link {
+  text-decoration: none;
+  border: none;
+}
