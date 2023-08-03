@@ -6,7 +6,7 @@ import { useGetFiltersRecipesQuery } from "../../redux/recipes/recipeApi";
 import { setRecipes } from "../../redux/recipes/recipeSlice";
 import Swal from "sweetalert2";
 
-function Search() {
+function Search({ menus }) {
   const [search, setSearch] = useState("");
   const [doSearch, setDoSearch] = useState(false);
   const dispatch = useDispatch();
@@ -83,14 +83,20 @@ function Search() {
 
   return (
     <>
-      <div className={styles.nav_input}>
+      <div
+        className={`${
+          menus === true ? styles.new_nav_input : styles.nav_input
+        }`}
+      >
         <form
           onSubmit={(event) => handleSubmit(event)}
-          className={styles.nav_input}
+          className={`${
+            menus === true ? styles.new_nav_input : styles.nav_input
+          }`}
         >
           <input
             type="text"
-            placeholder="Busca por recetas..."
+            placeholder="¡Busca recetas deliciosas!"
             maxLength="35"
             autoComplete="off"
             className={styles.input_text}
