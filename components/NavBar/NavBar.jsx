@@ -23,7 +23,7 @@ function NavBar() {
         />
       </div>
       <Search />
-      <div>
+      {/* <div>
         <button
           onClick={(event) => handleClickMenu(event)}
           className={styles.button_menu}
@@ -36,8 +36,8 @@ function NavBar() {
             className={styles.image}
           />
         </button>
-      </div>
-      <Menu isOpen={isOpen} handleClickMenu={handleClickMenu} />
+      </div> */}
+      <Menu />
     </nav>
   );
 }

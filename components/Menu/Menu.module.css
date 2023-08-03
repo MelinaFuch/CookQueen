@@ -3,9 +3,9 @@
 .container_menu {
   /* width: 100vw; */
   /* height: 100vh; */
-  display: flex;
-  justify-content: flex-end;
-  z-index: 1000;
+  /* display: flex;
+  justify-content: flex-start;
+  z-index: 1000; */
 }
 
 .linea {
@@ -14,13 +14,18 @@
   width: 5em;
 }
 
+.no_line {
+  display: none;
+}
+
 .container_open {
   /* padding: 2em; */
   top: 0;
-  right: 0;
-  align-items: flex-end;
+  right: -14em;
+  align-items: flex-start;
   font-family: "Just Another Hand";
   font-weight: 500;
+  color: transparent;
   color: #462c1d;
   flex-direction: column;
   display: flex;
@@ -28,17 +33,22 @@
   position: fixed;
   width: 25em;
   min-height: 100vh;
-  background: #f5a88ee3;
+  background: transparent;
+  z-index: 1000;
+  transition: right 0.5s ease-out, background-color 0.6s ease-in-out, color 0.5s;
 }
 
-/* .container_close {
-  padding: 2em;
-} */
+.open {
+  right: 0;
+  background-color: #f5a88ee3;
+  color: #462c1d;
+}
 
-.container_open .button_openMenu {
+.button_openMenu {
   border: none;
   border-radius: 50%;
-  margin: 1.5rem 2rem 0 0;
+  margin: 1.5rem 0 0 2rem;
+  opacity: 1;
 }
 /* .container_categorias {
   display: flex;
@@ -47,9 +57,16 @@
 .lista_menu {
   text-align: center;
   align-self: center;
+  justify-items: center;
   font-size: 5em;
   list-style: none;
   margin-top: 0.7em;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.menu_open {
+  opacity: 1;
 }
 
 .lista_categorias {
@@ -67,7 +84,6 @@
 }
 
 .image_prueba {
-  /* padding: 24px 32px 0 0; */
   border-radius: 50%;
 }
 
@@ -84,5 +100,43 @@
     width: 3em;
     /* display: flex;
     align-self: flex-end; */
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container_open {
+    /* width: 25em; */
+    transition: right 0.5s ease-out, background-color 0.6s ease-in-out,
+      color 0.5s, width 0.5;
+  }
+
+  .open {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .image_prueba {
+    width: 59px;
+    height: 59px;
+  }
+
+  .container_open {
+    right: -18rem;
+    /* width: 40rem; */
+    transition: right 0.5s ease-out, background-color 0.6s ease-in-out,
+      color 0.5s, width 0.5;
+  }
+
+  .open {
+    right: 0;
+  }
+
+  .button_openMenu {
+    margin: 3.5rem 0 0 2rem;
+  }
+
+  .lista_menu {
+    font-size: 3rem;
   }
 }

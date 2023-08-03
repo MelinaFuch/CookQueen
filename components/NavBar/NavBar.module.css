@@ -7,38 +7,10 @@
 }
 
 .nav_input {
-  width: 80%;
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.input_text {
-  background-color: #eeb299b0;
-  border-radius: 3em;
-  border-style: none;
-  width: 80%;
-  font-size: 3em;
-  height: 71px;
-  font-family: "Just Another Hand", cursive;
-  padding-left: 0.7em;
-  font-weight: 500;
-}
-
-.input_text::placeholder {
-  color: black;
-  font-family: "Just Another Hand", cursive;
-  font-weight: 500;
-}
-
-.lupa {
-  position: relative;
-  right: 5.5em;
-}
-
-.button_menu {
-  border-radius: 50%;
-  border: none;
 }
 
 @media screen and (max-width: 800px) {
@@ -48,9 +20,16 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .nav {
     margin: 1.5em 0em;
-    justify-content: space-around;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .logo {
+    width: 130px;
+    height: auto;
   }
 }

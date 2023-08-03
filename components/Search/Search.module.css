@@ -5,15 +5,19 @@
   align-items: center;
 }
 
+.new_nav_input {
+  display: none;
+}
+
 .input_text {
   background-color: #eeb299b0;
   border: none;
-  border-radius: 3em;
+  border-radius: 3rem;
   width: 80%;
-  font-size: 3em;
+  font-size: 3rem;
   height: 71px;
   font-family: "Just Another Hand", cursive;
-  padding-left: 0.7em;
+  padding-left: 0.7rem;
   font-weight: 500;
 }
 
@@ -35,22 +39,39 @@
   position: relative;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
   .nav_input {
-    display: none;
-  }
-
-  .image {
-    width: 5em;
-    display: flex;
-    align-self: center;
+    width: 90%;
   }
 }
 
-@media screen and (max-width: 600px) {
-  .image {
-    width: 3em;
+@media screen and (max-width: 800px) {
+  .nav_input {
+    display: none;
+    /* width: 100%; */
+  }
+
+  .new_nav_input {
+    width: 30rem;
     display: flex;
-    align-self: center;
+    margin-left: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .new_nav_input {
+    width: 25rem;
+    display: flex;
+    margin-left: 2.5rem;
+    align-items: center;
+  }
+
+  .new_nav_input .input_text {
+    font-size: 2rem;
+  }
+
+  .new_nav_input .lupa {
+    width: 40px;
+    height: 40px;
   }
 }
