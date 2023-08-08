@@ -3,6 +3,7 @@
 .container_menu {
   /* width: 100vw; */
   /* height: 100vh; */
+  /* background-color: red; */
   /* display: flex;
   justify-content: flex-start;
   z-index: 1000; */
@@ -20,8 +21,10 @@
 
 .container_open {
   /* padding: 2em; */
-  top: 0;
-  right: -14em;
+  /* top: 0;
+  right: -14em; */
+  /* position: absolute; */
+
   align-items: flex-start;
   font-family: "Just Another Hand";
   font-weight: 500;
@@ -29,23 +32,55 @@
   color: #462c1d;
   flex-direction: column;
   display: flex;
-  width: 100vw;
   position: fixed;
   width: 25em;
   min-height: 100vh;
   background: transparent;
   z-index: 1000;
-  transition: right 0.5s ease-out, background-color 0.6s ease-in-out, color 0.5s;
+  /* right: -25em; */
+  /* transition: right 0.6s ease-out, background-color 0.6s ease-in-out, color 0.5s;*/
+  background-color: #f5a88eeb;
+  top: 0;
+  right: 0;
+  transition: transform 0.5s ease-in-out;
+  /* transform: translateX(0); */
 }
 
 .open {
-  right: 0;
-  background-color: #f5a88ee3;
-  color: #462c1d;
+  /* right: 0; */
+}
+
+.container_close {
+  position: absolute;
+  justify-content: flex-end;
+  top: 0;
+  /* right: 0.5em; */
+  right: 10em;
+  /* right: -14em; */
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+  /* transform: translateX(0%); */
+}
+
+.to_Close {
+  /* transform: translateX(0%); */
+  /* transform: translateX(100%);
+  right: 12em; */
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  right: -14em;
 }
 
 .button_openMenu {
   border: none;
+  /* position: absolute; */
   border-radius: 50%;
   margin: 1.5rem 0 0 2rem;
   opacity: 1;
@@ -93,6 +128,9 @@
     display: flex;
     align-self: flex-end;
   }
+  .container_open {
+    width: 100vw;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -121,12 +159,11 @@
     height: 59px;
   }
 
-  .container_open {
-    right: -18rem;
-    /* width: 40rem; */
-    transition: right 0.5s ease-out, background-color 0.6s ease-in-out,
-      color 0.5s, width 0.5;
-  }
+  /* .container_open { */
+  /* right: -18rem; */
+  /* transition: right 0.5s ease-out, background-color 0.6s ease-in-out, */
+  /* color 0.5s, width 0.5; */
+  /* } */
 
   .open {
     right: 0;
