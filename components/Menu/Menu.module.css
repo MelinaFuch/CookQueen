@@ -43,29 +43,15 @@
   top: 0;
   right: 0;
   transition: transform 0.5s ease-in-out;
-  /* transform: translateX(0); */
-}
-
-.open {
-  /* right: 0; */
 }
 
 .container_close {
   position: absolute;
   justify-content: flex-end;
   top: 0;
-  /* right: 0.5em; */
   right: 10em;
-  /* right: -14em; */
   transition: transform 0.3s ease-in-out;
   transform: translateX(100%);
-  /* transform: translateX(0%); */
-}
-
-.to_Close {
-  /* transform: translateX(0%); */
-  /* transform: translateX(100%);
-  right: 12em; */
 }
 
 .absolute {

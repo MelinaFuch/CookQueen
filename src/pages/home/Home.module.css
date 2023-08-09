@@ -40,6 +40,24 @@
   font-weight: 500;
 }
 
+.show {
+  position: fixed;
+  bottom: 1.5em;
+  right: 1em;
+  z-index: 999;
+}
+.scrollButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ef6a3d;
+  font-size: 2rem;
+  line-height: 3.5rem;
+  font-weight: 800;
+  color: white;
+  border: none;
+}
+
 @media screen and (max-width: 800px) {
   .title {
     font-size: 4em;

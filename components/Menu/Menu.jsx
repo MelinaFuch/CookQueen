@@ -7,14 +7,10 @@ import Search from "../Search/Search";
 function Menu() {
   const [isOpen, setIsOpen] = useState(false);
   const [categoriesOpen, setCategoriesOpen] = useState(false);
-  const [time, setTime] = useState(false);
 
   const handleClickMenu = (event) => {
     event.preventDefault();
     setIsOpen(!isOpen);
-    setTimeout(() => {
-      setTime(!isOpen);
-    }, 3500);
   };
   const handleClickCategories = (event) => {
     event.preventDefault();
