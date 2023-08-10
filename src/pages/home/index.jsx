@@ -5,17 +5,40 @@ import NavBar from "../../../components/NavBar/NavBar";
 import { useGetRecipesQuery } from "../../../redux/recipes/recipeApi";
 import { useSelector } from "react-redux";
 import FilterRecipes from "../../../components/FilterRecipes/FilterRecipes";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function inicio() {
+  const [showButtonTop, setShowButtonTop] = useState(false);
   const { data: recipes, isLoading, error } = useGetRecipesQuery();
   const allRecipes = recipes?.data;
 
   const filteredRecipes = useSelector((state) => state.recipes);
 
+  // Show button when page is scrolled down
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > 300) {
+        setShowButtonTop(true);
+      } else {
+        setShowButtonTop(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
+  // Scroll to top smooth
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
-
   return (
     <div className={styles.container}>
       <NavBar />
@@ -43,6 +66,12 @@ export default function inicio() {
           </div>
         </div>
       )}
+      <button
+        className={`${styles.scrollButton} ${showButtonTop ? styles.show : ""}`}
+        onClick={scrollToTop}
+      >
+        ^
+      </button>
     </div>
   );
 }
